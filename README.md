@@ -1,5 +1,7 @@
 # ImplGuard Relay
 
+Live dApp: [https://implguard-relay.pages.dev](https://implguard-relay.pages.dev). [Cloudflare deployment verification](verification/cloudflare-deployment.md).
+
 StudioNet deployment: [0xF0271b6665c436638274229A6768b1dA4c950a33](https://explorer-studio.genlayer.com/address/0xF0271b6665c436638274229A6768b1dA4c950a33).
 
 The v2 deployment contains the complete-source-bundle fix, with byte-for-byte deployed-source verification. See [the source bundle audit](verification/SOURCE_BUNDLE_AUDIT.md) and [deployment evidence](verification/live/v2/deployed-source.json). Fresh v2 lifecycle verification is recorded separately from historical v1 evidence.
