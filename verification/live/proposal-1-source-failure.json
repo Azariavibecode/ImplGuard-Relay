@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-15T01:53:30.100Z",
+  "network": "StudioNet",
+  "chain_id": 61999,
+  "contract": "0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7",
+  "expected_before_execution": "SOURCE_UNVERIFIED; proposal remains PROPOSED/PENDING",
+  "before": {
+    "activated_count": 1,
+    "blocked_count": 0,
+    "proposal_count": 1,
+    "protocol_count": 1
+  },
+  "after": {
+    "proposal": {
+      "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "base_revision": 0,
+      "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "disclosure_source": {
+        "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+        "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "marker": "## DISCLOSURE SAFE",
+        "owner": "Azariavibecode",
+        "path": "/fixtures/upgrade-evidence.md",
+        "repo": "ImplGuard-Relay"
+      },
+      "permit_consumed": false,
+      "proposal_id": 1,
+      "protocol_id": 1,
+      "reason_code": "",
+      "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "state": "PROPOSED",
+      "verdict": "PENDING"
+    },
+    "ground": {
+      "error": "GROUND_NOT_FOUND"
+    },
+    "counts": {
+      "activated_count": 1,
+      "blocked_count": 0,
+      "proposal_count": 2,
+      "protocol_count": 2
+    }
+  },
+  "transactions": [
+    {
+      "label": "register_protocol",
+      "hash": "0x10d8d4c2e0c94ba5b5ad697a7356c2653b4207ed253804894dd85d4024fb15dc",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x10d8d4c2e0c94ba5b5ad697a7356c2653b4207ed253804894dd85d4024fb15dc"
+    },
+    {
+      "label": "propose_invalid_source",
+      "hash": "0xd341ff40909a4e0674baf7c1958a0e8fda9d35885de5968ba2936f6311d02021",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xd341ff40909a4e0674baf7c1958a0e8fda9d35885de5968ba2936f6311d02021"
+    },
+    {
+      "label": "ground_invalid_source",
+      "hash": "0xb3377216360f39e4a03bf288ca4f87ae8f84704214be66fe68dbb97d6225b27e",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xb3377216360f39e4a03bf288ca4f87ae8f84704214be66fe68dbb97d6225b27e"
+    }
+  ]
+}

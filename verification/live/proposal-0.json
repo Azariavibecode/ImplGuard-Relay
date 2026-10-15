@@ -1,0 +1,222 @@
+{
+  "generated_at": "2026-10-15T01:51:12.100Z",
+  "network": "StudioNet",
+  "chain_id": 61999,
+  "contract": "0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7",
+  "wallets": {
+    "auxiliary_a": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+    "auxiliary_b": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5"
+  },
+  "immutable_fixture": {
+    "owner": "Azariavibecode",
+    "repo": "ImplGuard-Relay",
+    "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+    "path": "/fixtures/upgrade-evidence.md",
+    "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf"
+  },
+  "public_contract_pair": {
+    "current": "0xA0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "candidate": "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c"
+  },
+  "expected_before_execution": "SAFE or RISK_DISCLOSED, then single-use ACTIVATED",
+  "before": {
+    "activated_count": 0,
+    "blocked_count": 0,
+    "proposal_count": 0,
+    "protocol_count": 0
+  },
+  "grounded": {
+    "candidate": {
+      "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "callable_surface": [
+        {
+          "inputs": [],
+          "mutability": "view",
+          "name": "admin"
+        },
+        {
+          "inputs": [
+            "address"
+          ],
+          "mutability": "nonpayable",
+          "name": "changeAdmin"
+        },
+        {
+          "inputs": [],
+          "mutability": "view",
+          "name": "implementation"
+        },
+        {
+          "inputs": [
+            "address"
+          ],
+          "mutability": "nonpayable",
+          "name": "upgradeTo"
+        },
+        {
+          "inputs": [
+            "address",
+            "bytes"
+          ],
+          "mutability": "payable",
+          "name": "upgradeToAndCall"
+        }
+      ],
+      "source": "[verified source omitted from view]",
+      "source_digest": "8c681cd559316643ba64bbed3b5ee6ecfdc7f3bab0bb449ec26e891367c14ba5"
+    },
+    "current": {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "callable_surface": [
+        {
+          "inputs": [
+            "address"
+          ],
+          "mutability": "nonpayable",
+          "name": "upgradeTo"
+        },
+        {
+          "inputs": [
+            "address",
+            "bytes"
+          ],
+          "mutability": "payable",
+          "name": "upgradeToAndCall"
+        },
+        {
+          "inputs": [],
+          "mutability": "view",
+          "name": "implementation"
+        },
+        {
+          "inputs": [
+            "address"
+          ],
+          "mutability": "nonpayable",
+          "name": "changeAdmin"
+        },
+        {
+          "inputs": [],
+          "mutability": "view",
+          "name": "admin"
+        }
+      ],
+      "source": "[verified source omitted from view]",
+      "source_digest": "ab5c8ad2bc311d8b6902b23300d35c74ee6f47bb74ecd722fe64ce6adba3cebe"
+    },
+    "disclosure": "## DISCLOSURE SAFE\n\nThe candidate preserves the current privilege surface. It adds no role-management, fund-movement, mint/burn, pause/freeze, upgrade-authority, delegatecall, or new external-call capability.",
+    "disclosure_digest": "ab21bdd8562ed26df1ec9980988673379273015aff1e47e382054b2d96caa7f1",
+    "policy": "## POLICY\n\nProtocol upgrades may add ordinary business logic. Any new role-management, asset-transfer, mint/burn, pause/freeze, upgrade-authority, delegatecall, or external-call capability must be disclosed. Delegatecall and unrestricted asset withdrawal are forbidden.",
+    "policy_digest": "16164b953015eccd7ad28a0e765e77c88456a51c881f75ad37ea440beffdc22e",
+    "status": "GROUNDED"
+  },
+  "after": {
+    "protocol": {
+      "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "label": "circle-proxy-migration",
+      "policy_source": {
+        "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+        "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+        "marker": "## POLICY",
+        "owner": "Azariavibecode",
+        "path": "/fixtures/upgrade-evidence.md",
+        "repo": "ImplGuard-Relay"
+      },
+      "protocol_id": 0,
+      "revision": 1,
+      "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "state": "ACTIVE"
+    },
+    "proposal": {
+      "analysis": {
+        "delegatecall": false,
+        "disclosure_complete": true,
+        "external_call_expansion": false,
+        "fund_movement": false,
+        "mint_or_burn": false,
+        "pause_or_freeze": false,
+        "proposal_id": 0,
+        "reason_code": "NO_PRIVILEGE_EXPANSION",
+        "role_change": false,
+        "storage_write_expansion": false,
+        "unknown_effect": false,
+        "upgrade_authority": false,
+        "verdict": "SAFE"
+      },
+      "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "base_revision": 0,
+      "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "disclosure_source": {
+        "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+        "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+        "marker": "## DISCLOSURE SAFE",
+        "owner": "Azariavibecode",
+        "path": "/fixtures/upgrade-evidence.md",
+        "repo": "ImplGuard-Relay"
+      },
+      "permit_consumed": true,
+      "proposal_id": 0,
+      "protocol_id": 0,
+      "reason_code": "NO_PRIVILEGE_EXPANSION",
+      "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "state": "ACTIVATED",
+      "verdict": "SAFE"
+    },
+    "counts": {
+      "activated_count": 1,
+      "blocked_count": 0,
+      "proposal_count": 1,
+      "protocol_count": 1
+    }
+  },
+  "transactions": [
+    {
+      "label": "register_protocol",
+      "hash": "0x49db32a3bd91ac3119ca9ed546a6d9aa6ccb27b25e1557d59d2bd86a2f7ab485",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x49db32a3bd91ac3119ca9ed546a6d9aa6ccb27b25e1557d59d2bd86a2f7ab485"
+    },
+    {
+      "label": "propose_upgrade",
+      "hash": "0x2a803d1c3d4e8616cf51c17ecce14d0586c8dc76a2f16d1540b09d6c3facc563",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x2a803d1c3d4e8616cf51c17ecce14d0586c8dc76a2f16d1540b09d6c3facc563"
+    },
+    {
+      "label": "ground_sources",
+      "hash": "0xa171124b604fdeaa7acf32f08bfea3c3ef298df9e1d0ee94d63875126b9ba313",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xa171124b604fdeaa7acf32f08bfea3c3ef298df9e1d0ee94d63875126b9ba313"
+    },
+    {
+      "label": "review_upgrade_1",
+      "hash": "0xe164a37765783c0d73fc55f03d156d89f3d28cb2eddf0da07b2fb1a7c5ae7810",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xe164a37765783c0d73fc55f03d156d89f3d28cb2eddf0da07b2fb1a7c5ae7810"
+    },
+    {
+      "label": "consume_activation",
+      "hash": "0x28a130a4c75de2fe1d990ae659e4fb428a518167a1348541beeac60099b1075d",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x28a130a4c75de2fe1d990ae659e4fb428a518167a1348541beeac60099b1075d"
+    },
+    {
+      "label": "replay_activation",
+      "hash": "0xf4751846e840f6683859e969b8fa185022d2f102957d829d2ab7a8e7b7a5f7ba",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_AGREE",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xf4751846e840f6683859e969b8fa185022d2f102957d829d2ab7a8e7b7a5f7ba"
+    }
+  ]
+}

@@ -38,4 +38,4 @@ npm --prefix frontend run build
 
 After deploying, set `VITE_CONTRACT_ADDRESS` and rebuild. Live StudioNet evidence must be generated only after the public fixture commit and deployed contract address are frozen.
 
-See [architecture](docs/ARCHITECTURE.md), [threat model](docs/THREAT_MODEL.md), and [E2E plan](verification/E2E_PLAN.md).
+See [architecture](docs/ARCHITECTURE.md), [threat model](docs/THREAT_MODEL.md), [E2E plan](verification/E2E_PLAN.md), and [completed StudioNet evidence](verification/STUDIONET_E2E.md).
