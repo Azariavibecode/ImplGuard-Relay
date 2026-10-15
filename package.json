@@ -1,0 +1,1 @@
+{"name":"implguard-relay","private":true,"scripts":{"test":"python -m pytest -q -p no:cacheprovider","build":"npm --prefix frontend run build"}}

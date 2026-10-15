@@ -1,0 +1,9 @@
+.pytest_cache/
+artifacts/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.env
+.env.local
+verification/live/*.json
