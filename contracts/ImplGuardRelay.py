@@ -4,6 +4,8 @@ from genlayer import *
 
 import hashlib
 import json
+import posixpath
+import re
 import typing
 
 
@@ -122,6 +124,30 @@ class Contract(gl.Contract):
         abi = contract.get("abi")
         if not (0 < len(source) <= 42000) or not isinstance(abi, list) or not (0 < len(abi) <= 180):
             return None
+        # Verify and review the complete compiler source bundle, including inherited logic.
+        primary_path = str(contract.get("file_path") or "main.sol")
+        additional = contract.get("additional_sources", [])
+        if not isinstance(additional, list) or len(additional) > 31:
+            return None
+        files = {primary_path: source}
+        for item in additional:
+            if not isinstance(item, dict):
+                return None
+            path = item.get("file_path")
+            body = item.get("source_code")
+            if not isinstance(path, str) or not (0 < len(path) <= 500) or path in files or not isinstance(body, str) or not (0 < len(body) <= 42000):
+                return None
+            files[path] = body
+        if sum(len(body) for body in files.values()) > 64000:
+            return None
+        # Every import must resolve within the authenticated explorer bundle.
+        for path, body in files.items():
+            for imported in re.findall(r'''\bimport\b[^;]*?["']([^"']+)["'][^;]*;''', body):
+                resolved = posixpath.normpath(posixpath.join(posixpath.dirname(path), imported)) if imported.startswith(".") else imported
+                if resolved not in files:
+                    return None
+        source_bundle = [{"path": path, "source": files[path], "sha256": hashlib.sha256(files[path].encode("utf-8")).hexdigest()} for path in sorted(files)]
+        canonical_bundle = json.dumps(source_bundle, sort_keys=True, separators=(",", ":"))
         callable_surface = []
         for entry in abi:
             if isinstance(entry, dict) and entry.get("type") == "function" and isinstance(entry.get("inputs"), list):
@@ -130,7 +156,7 @@ class Contract(gl.Contract):
                     "inputs": [str(item.get("type", ""))[:80] for item in entry["inputs"] if isinstance(item, dict)],
                     "mutability": str(entry.get("stateMutability", ""))[:32],
                 })
-        return {"address": address, "source": source, "source_digest": hashlib.sha256(source.encode("utf-8")).hexdigest(), "callable_surface": callable_surface}
+        return {"address": address, "source": canonical_bundle, "source_digest": hashlib.sha256(canonical_bundle.encode("utf-8")).hexdigest(), "source_files": [{"path": item["path"], "sha256": item["sha256"]} for item in source_bundle], "callable_surface": callable_surface}
 
     @gl.public.write
     def register_protocol(self, label: str, current_implementation: str, policy_source_json: str) -> typing.Any:

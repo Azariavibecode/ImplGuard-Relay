@@ -1,0 +1,1983 @@
+{
+  "address": "0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7",
+  "started_at": "2026-10-15T02:12:29.138Z",
+  "scope": "Current deployed v1; source-bundle audit fix requires a new deployment",
+  "cases": [
+    {
+      "label": "stale_base_rejected",
+      "expected": "STALE_BASE",
+      "before": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "after": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "passed": true,
+      "hash": "0xa8f00d69d4efcb712dfeae27d1152da0022a27d8bcc6451d7cf07f6f6b9d61d7"
+    },
+    {
+      "label": "wrong_actor_consume_rejected",
+      "expected": "SPONSOR_ONLY",
+      "before": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "after": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "passed": true,
+      "hash": "0xb7a1fd6971adc6a168d5f8d8e9a90b9fe7d60ab59d65034a98d1f2ae7600ca35"
+    },
+    {
+      "label": "wrong_actor_propose_rejected",
+      "expected": "SPONSOR_ONLY",
+      "before": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "after": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "passed": true,
+      "hash": "0x1c3f3c74550305fcfb466c6ad1953364c2dae7d46efb95ad99ec318a188fec77"
+    },
+    {
+      "label": "terminal_review_rejected",
+      "expected": "PROPOSAL_NOT_GROUNDED",
+      "before": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "after": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "passed": true,
+      "hash": "0xb51be7dfb0cddd7b7013422d4e7b4b4ebaf24809ca6a5511453fa7a0ed566f50"
+    },
+    {
+      "label": "terminal_consume_rejected",
+      "expected": "PERMIT_NOT_READY",
+      "before": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "after": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "passed": true,
+      "hash": "0x730d6a8173353db2377479b9af6963caa4b89fabe4b07b12e1c0f03816333c68"
+    },
+    {
+      "label": "blocked_consume_rejected",
+      "expected": "PERMIT_NOT_READY",
+      "before": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "after": {
+        "protocol": {
+          "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "label": "stale-base-control",
+          "policy_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## POLICY",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "protocol_id": 3,
+          "revision": 1,
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVE"
+        },
+        "active": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 3,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": true,
+          "proposal_id": 3,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "ACTIVATED",
+          "verdict": "SAFE"
+        },
+        "stale": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": true,
+            "external_call_expansion": false,
+            "fund_movement": false,
+            "mint_or_burn": false,
+            "pause_or_freeze": false,
+            "proposal_id": 4,
+            "reason_code": "NO_PRIVILEGE_EXPANSION",
+            "role_change": false,
+            "storage_write_expansion": false,
+            "unknown_effect": false,
+            "upgrade_authority": false,
+            "verdict": "SAFE"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE SAFE",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 4,
+          "protocol_id": 3,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "PERMIT_READY",
+          "verdict": "SAFE"
+        },
+        "blocked": {
+          "analysis": {
+            "delegatecall": false,
+            "disclosure_complete": false,
+            "external_call_expansion": true,
+            "fund_movement": true,
+            "mint_or_burn": true,
+            "pause_or_freeze": true,
+            "proposal_id": 2,
+            "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+            "role_change": true,
+            "storage_write_expansion": true,
+            "unknown_effect": false,
+            "upgrade_authority": true,
+            "verdict": "BLOCKED"
+          },
+          "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "base_revision": 0,
+          "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "disclosure_source": {
+            "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+            "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+            "marker": "## DISCLOSURE HIDDEN",
+            "owner": "Azariavibecode",
+            "path": "/fixtures/upgrade-evidence.md",
+            "repo": "ImplGuard-Relay"
+          },
+          "permit_consumed": false,
+          "proposal_id": 2,
+          "protocol_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+          "state": "BLOCKED",
+          "verdict": "BLOCKED"
+        },
+        "counts": {
+          "activated_count": 2,
+          "blocked_count": 1,
+          "proposal_count": 5,
+          "protocol_count": 4
+        }
+      },
+      "passed": true,
+      "hash": "0xc669b973cb26ea3c67fbac12db06f9cebfa21d578f6a375454273c9bf5680c21"
+    }
+  ],
+  "transactions": [
+    {
+      "label": "stale_base_rejected",
+      "hash": "0xa8f00d69d4efcb712dfeae27d1152da0022a27d8bcc6451d7cf07f6f6b9d61d7",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xa8f00d69d4efcb712dfeae27d1152da0022a27d8bcc6451d7cf07f6f6b9d61d7",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"STALE_BASE\"",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "wrong_actor_consume_rejected",
+      "hash": "0xb7a1fd6971adc6a168d5f8d8e9a90b9fe7d60ab59d65034a98d1f2ae7600ca35",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xb7a1fd6971adc6a168d5f8d8e9a90b9fe7d60ab59d65034a98d1f2ae7600ca35",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"SPONSOR_ONLY\"",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "wrong_actor_propose_rejected",
+      "hash": "0x1c3f3c74550305fcfb466c6ad1953364c2dae7d46efb95ad99ec318a188fec77",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x1c3f3c74550305fcfb466c6ad1953364c2dae7d46efb95ad99ec318a188fec77",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"SPONSOR_ONLY\"",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "terminal_review_rejected",
+      "hash": "0xb51be7dfb0cddd7b7013422d4e7b4b4ebaf24809ca6a5511453fa7a0ed566f50",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xb51be7dfb0cddd7b7013422d4e7b4b4ebaf24809ca6a5511453fa7a0ed566f50",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"PROPOSAL_NOT_GROUNDED\"",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "terminal_consume_rejected",
+      "hash": "0x730d6a8173353db2377479b9af6963caa4b89fabe4b07b12e1c0f03816333c68",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x730d6a8173353db2377479b9af6963caa4b89fabe4b07b12e1c0f03816333c68",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"PERMIT_NOT_READY\"",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "blocked_consume_rejected",
+      "hash": "0xc669b973cb26ea3c67fbac12db06f9cebfa21d578f6a375454273c9bf5680c21",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xc669b973cb26ea3c67fbac12db06f9cebfa21d578f6a375454273c9bf5680c21",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"PERMIT_NOT_READY\"",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ambiguous_register",
+      "hash": "0x45f8212495a0c46e0c2aac00a37537e089911e430fb2a0b1afb24c8ee027aa36",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x45f8212495a0c46e0c2aac00a37537e089911e430fb2a0b1afb24c8ee027aa36",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "4",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ambiguous_propose",
+      "hash": "0x0dba529a878fd7527a284cc0e9a31ffdf8f42691a399cce4f1e1277ae88100b7",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x0dba529a878fd7527a284cc0e9a31ffdf8f42691a399cce4f1e1277ae88100b7",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "5",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ambiguous_ground",
+      "hash": "0x53cc9a0913a67fea4e126b15302e4eb10815ae7ad5d2d96eae7f2647f378c5b7",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x53cc9a0913a67fea4e126b15302e4eb10815ae7ad5d2d96eae7f2647f378c5b7",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"GROUNDED\"",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ambiguous_review_1",
+      "hash": "0x4e08e1b67f5d9f4508a43daa0c7cb041edd316cdee2f4f128bd84c85eb0dbd25",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x4e08e1b67f5d9f4508a43daa0c7cb041edd316cdee2f4f128bd84c85eb0dbd25",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"BLOCKED\"",
+      "rounds": [
+        {
+          "round": "Leader Rotation",
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            }
+          ]
+        },
+        {
+          "round": "Accepted",
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ambiguous_protocol_id": 4,
+  "ambiguous_proposal_id": 5,
+  "ambiguous": {
+    "analysis": {
+      "delegatecall": false,
+      "disclosure_complete": false,
+      "external_call_expansion": true,
+      "fund_movement": true,
+      "mint_or_burn": true,
+      "pause_or_freeze": true,
+      "proposal_id": 5,
+      "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+      "role_change": true,
+      "storage_write_expansion": true,
+      "unknown_effect": false,
+      "upgrade_authority": false,
+      "verdict": "BLOCKED"
+    },
+    "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "base_revision": 0,
+    "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "disclosure_source": {
+      "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+      "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+      "marker": "## DISCLOSURE AMBIGUOUS",
+      "owner": "Azariavibecode",
+      "path": "/fixtures/upgrade-evidence.md",
+      "repo": "ImplGuard-Relay"
+    },
+    "permit_consumed": false,
+    "proposal_id": 5,
+    "protocol_id": 4,
+    "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+    "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+    "state": "BLOCKED",
+    "verdict": "BLOCKED"
+  },
+  "ambiguous_fail_closed": true,
+  "completed_at": "2026-10-15T02:23:29.847Z"
+}

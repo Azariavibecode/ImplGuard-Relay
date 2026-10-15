@@ -2,6 +2,8 @@
 
 StudioNet deployment: [0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7](https://explorer-studio.genlayer.com/address/0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7).
 
+Release status: this is the v1 deployment. The current contract source includes a complete-source-bundle fix and requires redeployment before submission. See [the source bundle audit](verification/SOURCE_BUNDLE_AUDIT.md).
+
 ImplGuard Relay is a GenLayer dApp that compares the verified source and ABI surface of a current Ethereum implementation with a proposed replacement. It authenticates a commit-pinned upgrade policy and disclosure, asks GenLayer validators for a bounded semantic privilege delta, and permits activation only when deterministic policy gates pass.
 
 ## Why GenLayer

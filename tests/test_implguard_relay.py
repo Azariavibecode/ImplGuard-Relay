@@ -25,11 +25,11 @@ def mock_github(vm):
     raw=f"https://raw.githubusercontent.com/{OWNER}/{REPO}/{COMMIT}{PATH}"
     vm.mock_web(raw.replace(".",r"\.")+"$",{"status":200,"body":BODY})
 
-def mock_contract(vm,address,source,verified=True):
+def mock_contract(vm,address,source,verified=True,additional_sources=None,file_path="main.sol"):
     vm.mock_web(("https://eth.blockscout.com/api/v2/addresses/"+address).replace(".",r"\.")+"$",{"status":200,"body":json.dumps({"hash":address,"is_contract":True}).encode()})
     abi=[{"type":"function","name":"deposit","inputs":[{"name":"amount","type":"uint256"}],"stateMutability":"nonpayable"}]
     if address==CANDIDATE: abi.append({"type":"function","name":"withdraw","inputs":[{"name":"amount","type":"uint256"}],"stateMutability":"nonpayable"})
-    vm.mock_web(("https://eth.blockscout.com/api/v2/smart-contracts/"+address).replace(".",r"\.")+"$",{"status":200,"body":json.dumps({"is_verified":verified,"source_code":source,"abi":abi}).encode()})
+    vm.mock_web(("https://eth.blockscout.com/api/v2/smart-contracts/"+address).replace(".",r"\.")+"$",{"status":200,"body":json.dumps({"is_verified":verified,"source_code":source,"file_path":file_path,"additional_sources":additional_sources or [],"abi":abi}).encode()})
 
 def analysis(verdict="SAFE",reason="NO_PRIVILEGE_EXPANSION",**changes):
     item={"proposal_id":0,"storage_write_expansion":False,"role_change":False,"fund_movement":False,"mint_or_burn":False,"pause_or_freeze":False,"upgrade_authority":False,"delegatecall":False,"external_call_expansion":False,"disclosure_complete":True,"unknown_effect":False,"verdict":verdict,"reason_code":reason}
@@ -136,3 +136,38 @@ def test_invalid_inputs_and_unknown_ids(setup):
         assert contract.register_protocol("x","0x1234",descriptor("## POLICY"))=="INVALID_PROTOCOL"
         assert contract.propose_upgrade(99,CANDIDATE,descriptor("## DISCLOSURE SAFE"))=="PROTOCOL_NOT_FOUND"
     assert contract.ground_sources(99)=="PROPOSAL_NOT_FOUND"
+
+@pytest.mark.parametrize("mode",["missing_import","duplicate_path","oversize_bundle"])
+def test_incomplete_or_ambiguous_bundle_fails_closed(setup,mode):
+    vm,contract,_,sponsor=setup
+    with vm.prank(sponsor):
+        contract.register_protocol("bundle-check",CURRENT,descriptor("## POLICY"))
+        contract.propose_upgrade(0,CANDIDATE,descriptor("## DISCLOSURE SAFE"))
+    mock_github(vm)
+    mock_contract(vm,CURRENT,CURRENT_SOURCE)
+    source='import "./Admin.sol"; contract V2 is Admin {}'
+    extras=[]
+    if mode=="duplicate_path": extras=[{"file_path":"main.sol","source_code":"contract Fake {}"}]
+    if mode=="oversize_bundle": extras=[{"file_path":"Admin.sol","source_code":"x"*33000},{"file_path":"Extra.sol","source_code":"x"*33000}]
+    mock_contract(vm,CANDIDATE,source,additional_sources=extras)
+    before=(contract.get_protocol(0),contract.get_proposal(0),contract.get_counts())
+    assert contract.ground_sources(0)=="SOURCE_UNVERIFIED"
+    assert before==(contract.get_protocol(0),contract.get_proposal(0),contract.get_counts())
+    assert json.loads(contract.get_ground(0))["error"]=="GROUND_NOT_FOUND"
+
+def test_inherited_privilege_is_included_in_grounded_digest(setup):
+    vm,contract,_,sponsor=setup
+    with vm.prank(sponsor):
+        contract.register_protocol("bundle-check",CURRENT,descriptor("## POLICY"))
+        contract.propose_upgrade(0,CANDIDATE,descriptor("## DISCLOSURE HIDDEN"))
+    mock_github(vm)
+    mock_contract(vm,CURRENT,CURRENT_SOURCE)
+    admin='contract Admin { function emergencyWithdraw() external {} }'
+    mock_contract(vm,CANDIDATE,'import "./Admin.sol"; contract V2 is Admin {}',additional_sources=[{"file_path":"Admin.sol","source_code":admin}])
+    assert contract.ground_sources(0)=="GROUNDED"
+    ground=json.loads(contract.get_ground(0))
+    inventory=ground["candidate"]["source_files"]
+    assert len(inventory)==2
+    assert inventory[0]=={"path":"Admin.sol","sha256":sha(admin.encode())}
+    vm.mock_llm(r"(?s)Compare the exact verified current.*emergencyWithdraw.*",analysis("BLOCKED","UNDISCLOSED_PRIVILEGE_EXPANSION",fund_movement=True,disclosure_complete=False))
+    assert contract.review_upgrade(0)=="BLOCKED"

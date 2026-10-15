@@ -1,0 +1,726 @@
+{
+  "address": "0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7",
+  "captured_at": "2026-10-15T02:21:08.868Z",
+  "transactions": [
+    {
+      "label": "blocked_register",
+      "hash": "0x17da3978ae879f13c5a75c008bef208b222011b896687c9f995d48b1d1711355",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "2",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x17da3978ae879f13c5a75c008bef208b222011b896687c9f995d48b1d1711355",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "blocked_propose",
+      "hash": "0x17b9fe33fc1fe23a5f7f0c90adf83279d1e7eb2b5ee6bb577023e875595e03f6",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "2",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x17b9fe33fc1fe23a5f7f0c90adf83279d1e7eb2b5ee6bb577023e875595e03f6",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "blocked_ground",
+      "hash": "0xbabaaa91b4cdb6a383e0d7b8dffb08b16caf8be0c1f763816e155460835453c0",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"GROUNDED\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xbabaaa91b4cdb6a383e0d7b8dffb08b16caf8be0c1f763816e155460835453c0",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "blocked_review",
+      "hash": "0xe18c4888b2088ddcedf318d35cdba76612bb33794c0b282430c1ad62735300e7",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"BLOCKED\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xe18c4888b2088ddcedf318d35cdba76612bb33794c0b282430c1ad62735300e7",
+      "rounds": [
+        {
+          "round": "Leader Rotation",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        },
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_register",
+      "hash": "0x0c9c959781fb572444ea6f05bad48f49031a0aa4425262bd81c5d98c1f0d48c0",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "3",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x0c9c959781fb572444ea6f05bad48f49031a0aa4425262bd81c5d98c1f0d48c0",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "first_wrong_actor_propose",
+      "hash": "0x9dedae8522a72350bd4db06527755bdf74b09a8dee15a63d6a0439bf7b7049d4",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"SPONSOR_ONLY\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x9dedae8522a72350bd4db06527755bdf74b09a8dee15a63d6a0439bf7b7049d4",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_propose_first",
+      "hash": "0x50b033aa0e7f0ad012c1bd4edc9f001897a7040f7f4f8a0c992bc8d54fcc31c4",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "3",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x50b033aa0e7f0ad012c1bd4edc9f001897a7040f7f4f8a0c992bc8d54fcc31c4",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_propose_second",
+      "hash": "0x48f5dade4e7d3d081f91c8811befd8a45b8190b21218f433690fb6b091f47ca2",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "4",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x48f5dade4e7d3d081f91c8811befd8a45b8190b21218f433690fb6b091f47ca2",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_ground_first",
+      "hash": "0xc88dc65ad652c0e7510310f771485c110398edf01f423444443e7e5971833b63",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"GROUNDED\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xc88dc65ad652c0e7510310f771485c110398edf01f423444443e7e5971833b63",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_ground_second",
+      "hash": "0xd5152f9ee400d4e61844d36ccb04ac3d2b17af9278049c3d1db3f3a36a0ad0ad",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"GROUNDED\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xd5152f9ee400d4e61844d36ccb04ac3d2b17af9278049c3d1db3f3a36a0ad0ad",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_review_first",
+      "hash": "0xa6c1e2b00e844b95ef83b324581aae7b5e9e9cd63f9db07891eadfe5f7a24a8f",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"SAFE\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xa6c1e2b00e844b95ef83b324581aae7b5e9e9cd63f9db07891eadfe5f7a24a8f",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_review_second",
+      "hash": "0x61c37539067e0bb03406183df23ba162f42c7bc7744edb3a7ed096068752d570",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"SAFE\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x61c37539067e0bb03406183df23ba162f42c7bc7744edb3a7ed096068752d570",
+      "rounds": [
+        {
+          "round": "Leader Rotation",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING"
+          ],
+          "validators": [
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            }
+          ]
+        },
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "disagree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "first_wrong_actor_consume",
+      "hash": "0x1ae0dbc9c3d742586a99aabbf7364552df73e538999cfde72f917fb822d243ce",
+      "actor": "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"SPONSOR_ONLY\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0x1ae0dbc9c3d742586a99aabbf7364552df73e538999cfde72f917fb822d243ce",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "sibling_activate_first",
+      "hash": "0xa79758946e7f6f651eb3ceb24ff6f6e7ab3497275f05fdc137cda201f2ac9124",
+      "actor": "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "returned": "\"ACTIVATED\"",
+      "explorer_url": "https://explorer-studio.genlayer.com/transactions/0xa79758946e7f6f651eb3ceb24ff6f6e7ab3497275f05fdc137cda201f2ac9124",
+      "rounds": [
+        {
+          "round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "validators": [
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "idle",
+              "execution": "ERROR"
+            },
+            {
+              "vote": "agree",
+              "execution": "SUCCESS"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "analysis": {
+        "delegatecall": false,
+        "disclosure_complete": false,
+        "external_call_expansion": true,
+        "fund_movement": true,
+        "mint_or_burn": true,
+        "pause_or_freeze": true,
+        "proposal_id": 2,
+        "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+        "role_change": true,
+        "storage_write_expansion": true,
+        "unknown_effect": false,
+        "upgrade_authority": true,
+        "verdict": "BLOCKED"
+      },
+      "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "base_revision": 0,
+      "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "disclosure_source": {
+        "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+        "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+        "marker": "## DISCLOSURE HIDDEN",
+        "owner": "Azariavibecode",
+        "path": "/fixtures/upgrade-evidence.md",
+        "repo": "ImplGuard-Relay"
+      },
+      "permit_consumed": false,
+      "proposal_id": 2,
+      "protocol_id": 2,
+      "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+      "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "state": "BLOCKED",
+      "verdict": "BLOCKED"
+    },
+    {
+      "analysis": {
+        "delegatecall": false,
+        "disclosure_complete": true,
+        "external_call_expansion": false,
+        "fund_movement": false,
+        "mint_or_burn": false,
+        "pause_or_freeze": false,
+        "proposal_id": 3,
+        "reason_code": "NO_PRIVILEGE_EXPANSION",
+        "role_change": false,
+        "storage_write_expansion": false,
+        "unknown_effect": false,
+        "upgrade_authority": false,
+        "verdict": "SAFE"
+      },
+      "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "base_revision": 0,
+      "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "disclosure_source": {
+        "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+        "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+        "marker": "## DISCLOSURE SAFE",
+        "owner": "Azariavibecode",
+        "path": "/fixtures/upgrade-evidence.md",
+        "repo": "ImplGuard-Relay"
+      },
+      "permit_consumed": true,
+      "proposal_id": 3,
+      "protocol_id": 3,
+      "reason_code": "NO_PRIVILEGE_EXPANSION",
+      "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "state": "ACTIVATED",
+      "verdict": "SAFE"
+    },
+    {
+      "analysis": {
+        "delegatecall": false,
+        "disclosure_complete": true,
+        "external_call_expansion": false,
+        "fund_movement": false,
+        "mint_or_burn": false,
+        "pause_or_freeze": false,
+        "proposal_id": 4,
+        "reason_code": "NO_PRIVILEGE_EXPANSION",
+        "role_change": false,
+        "storage_write_expansion": false,
+        "unknown_effect": false,
+        "upgrade_authority": false,
+        "verdict": "SAFE"
+      },
+      "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "base_revision": 0,
+      "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "disclosure_source": {
+        "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+        "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+        "marker": "## DISCLOSURE SAFE",
+        "owner": "Azariavibecode",
+        "path": "/fixtures/upgrade-evidence.md",
+        "repo": "ImplGuard-Relay"
+      },
+      "permit_consumed": false,
+      "proposal_id": 4,
+      "protocol_id": 3,
+      "reason_code": "NO_PRIVILEGE_EXPANSION",
+      "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "state": "PERMIT_READY",
+      "verdict": "SAFE"
+    }
+  ],
+  "conflict_observed": true
+}

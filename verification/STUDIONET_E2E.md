@@ -1,5 +1,7 @@
 # StudioNet E2E evidence
 
+Release caveat: these transactions executed v1. The [source bundle audit](SOURCE_BUNDLE_AUDIT.md) found an evidence-completeness gap and the corrected contract requires a fresh deployment. Registry lifecycle evidence remains valid; it is not live verification of the corrected source collector.
+
 ## Frozen inputs
 
 - Contract: [`0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7`](https://explorer-studio.genlayer.com/address/0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7)
@@ -42,5 +44,28 @@ Expected before execution: an all-zero disclosure digest must return `SOURCE_UNV
 Readback remained `PROPOSED/PENDING`, `get_ground` returned `GROUND_NOT_FOUND`, and consequential counters stayed `activated_count=1`, `blocked_count=0`. Full evidence: [`live/proposal-1-source-failure.json`](live/proposal-1-source-failure.json).
 
 ## Verification boundary
+
+## Extended adversarial run (2026-10-15)
+
+The SDK-signed extended run is preserved in [initial transaction history](live/initial-adversarial-transactions.json) and [resumed audit with complete before/after snapshots](live/audit-resumed.json).
+
+| Case | Authoritative result |
+|---|---|
+| Hidden privilege expansion, proposal 2 | `BLOCKED / UNDISCLOSED_PRIVILEGE_EXPANSION`; no permit |
+| Validator conflict | First blocked review had disagree votes and `Leader Rotation`; later round finalized `MAJORITY_AGREE` |
+| Two sibling proposals 3 and 4 | Both reached `SAFE/PERMIT_READY`; proposal 3 activated |
+| Consume sibling 4 after activation | `STALE_BASE`; complete relevant pre/post state equal |
+| Wrong actor consume | `SPONSOR_ONLY`; complete relevant pre/post state equal |
+| Wrong actor propose | `SPONSOR_ONLY`; complete relevant pre/post state equal |
+| Terminal review replay | `PROPOSAL_NOT_GROUNDED`; complete relevant pre/post state equal |
+| Terminal consume replay | `PERMIT_NOT_READY`; complete relevant pre/post state equal |
+| Consume blocked proposal | `PERMIT_NOT_READY`; complete relevant pre/post state equal |
+| Ambiguous disclosure, proposal 5 | `BLOCKED`; no permit. This does not demonstrate an `INCONCLUSIVE` live verdict |
+
+Each resumed rejection records FINALIZED status, `MAJORITY_AGREE`, leader `SUCCESS`, exact returned rejection code, and complete relevant state equality. The first runner hit the public RPC rate limit after the first sibling activation; a checkpointed runner resumed the remaining checks at a slower polling interval. It did not repeat completed activation.
+
+The UI was corrected to check consensus and leader execution, derive newly created IDs from transaction return values, propagate readback failure, and clear cached selection state. [SDK/UI readback evidence](live/ui-sdk-readback.json) checks the exact IDs and read methods consumed by the UI. This is SDK reconciliation evidence, not a browser rendering or wallet-popup test.
+
+Local corrected-source verification: `18 passed`. See [source bundle audit](SOURCE_BUNDLE_AUDIT.md) for the release-blocking issue discovered during the audit and the required fresh deployment.
 
 This run demonstrates the internal activation registry and its single-use permit. It does not claim that an external Ethereum proxy was upgraded. The public pair is a reproducible verified-source fixture; its five-function callable surfaces match, while source digests differ and are preserved in evidence.
