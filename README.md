@@ -1,8 +1,8 @@
 # ImplGuard Relay
 
-StudioNet deployment: [0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7](https://explorer-studio.genlayer.com/address/0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7).
+StudioNet deployment: [0xF0271b6665c436638274229A6768b1dA4c950a33](https://explorer-studio.genlayer.com/address/0xF0271b6665c436638274229A6768b1dA4c950a33).
 
-Release status: this is the v1 deployment. The current contract source includes a complete-source-bundle fix and requires redeployment before submission. See [the source bundle audit](verification/SOURCE_BUNDLE_AUDIT.md).
+The v2 deployment contains the complete-source-bundle fix, with byte-for-byte deployed-source verification. See [the source bundle audit](verification/SOURCE_BUNDLE_AUDIT.md) and [deployment evidence](verification/live/v2/deployed-source.json). Fresh v2 lifecycle verification is recorded separately from historical v1 evidence.
 
 ImplGuard Relay is a GenLayer dApp that compares the verified source and ABI surface of a current Ethereum implementation with a proposed replacement. It authenticates a commit-pinned upgrade policy and disclosure, asks GenLayer validators for a bounded semantic privilege delta, and permits activation only when deterministic policy gates pass.
 
@@ -40,4 +40,6 @@ npm --prefix frontend run build
 
 After deploying, set `VITE_CONTRACT_ADDRESS` and rebuild. Live StudioNet evidence must be generated only after the public fixture commit and deployed contract address are frozen.
 
-See [architecture](docs/ARCHITECTURE.md), [threat model](docs/THREAT_MODEL.md), [E2E plan](verification/E2E_PLAN.md), and [completed StudioNet evidence](verification/STUDIONET_E2E.md).
+See [architecture](docs/ARCHITECTURE.md), [threat model](docs/THREAT_MODEL.md), [E2E plan](verification/E2E_PLAN.md), and [corrected deployment StudioNet evidence](verification/STUDIONET_V2_E2E.md).
+
+The v2 live run completed 25 finalized SDK-signed transactions covering activation, complete source grounding, hidden privilege rejection, source failure, validator disagreement/rotation, wrong actors, stale base, and terminal replay. Local contract verification: `18 passed`. UI state was reconciled through SDK reads of the exact displayed IDs.

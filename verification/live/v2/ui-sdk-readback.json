@@ -1,0 +1,1084 @@
+{
+  "generated_at": "2026-10-15T03:14:52.353Z",
+  "address": "0xF0271b6665c436638274229A6768b1dA4c950a33",
+  "verification_scope": "SDK reads of the exact entrypoints and IDs displayed by UI; browser rendering and wallet popup were not exercised",
+  "counts": {
+    "activated_count": 1,
+    "blocked_count": 2,
+    "proposal_count": 5,
+    "protocol_count": 4
+  },
+  "records": [
+    {
+      "selected_proposal_id": 0,
+      "selected_protocol_id": 0,
+      "proposal": {
+        "analysis": {
+          "delegatecall": false,
+          "disclosure_complete": true,
+          "external_call_expansion": false,
+          "fund_movement": false,
+          "mint_or_burn": false,
+          "pause_or_freeze": false,
+          "proposal_id": 0,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "role_change": false,
+          "storage_write_expansion": false,
+          "unknown_effect": false,
+          "upgrade_authority": false,
+          "verdict": "SAFE"
+        },
+        "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "base_revision": 0,
+        "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "disclosure_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## DISCLOSURE SAFE",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "permit_consumed": true,
+        "proposal_id": 0,
+        "protocol_id": 0,
+        "reason_code": "NO_PRIVILEGE_EXPANSION",
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "ACTIVATED",
+        "verdict": "SAFE"
+      },
+      "protocol": {
+        "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "label": "v2-happy",
+        "policy_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## POLICY",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "protocol_id": 0,
+        "revision": 1,
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "ACTIVE"
+      },
+      "ground": {
+        "candidate": {
+          "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "callable_surface": [
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "admin"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "changeAdmin"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "implementation"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "upgradeTo"
+            },
+            {
+              "inputs": [
+                "address",
+                "bytes"
+              ],
+              "mutability": "payable",
+              "name": "upgradeToAndCall"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "7ca6c3b0e9e4ba1dfb650af162fa5ed1603baca92618c61eb2d055c0e8f232cd",
+          "source_files": [
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/upgradeability/AdminUpgradeabilityProxy.sol",
+              "sha256": "78cde2f2e0e08193fd00ed6af0291f7aedb013f9b37e2108fb0469c605407a28"
+            },
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/upgradeability/Proxy.sol",
+              "sha256": "d21905d81b0f3fdcbd1efa3086f723dfff6d04d91343da01ca5f59948c88bcc4"
+            },
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/upgradeability/UpgradeabilityProxy.sol",
+              "sha256": "4ecb3e5b0caee0a193343cf12d305752c44e7040e43869497707fddc66e96743"
+            },
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/v1/FiatTokenProxy.sol",
+              "sha256": "8c681cd559316643ba64bbed3b5ee6ecfdc7f3bab0bb449ec26e891367c14ba5"
+            },
+            {
+              "path": "@openzeppelin/contracts/utils/Address.sol",
+              "sha256": "65e6644738743b23ab1dc72cce8426f0fd6ea5dd96e87a7e16fbb0c4ccbb1633"
+            }
+          ]
+        },
+        "current": {
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "callable_surface": [
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "upgradeTo"
+            },
+            {
+              "inputs": [
+                "address",
+                "bytes"
+              ],
+              "mutability": "payable",
+              "name": "upgradeToAndCall"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "implementation"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "changeAdmin"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "admin"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "c32d9daecaf64a814e64971c76b0f9d6f8e305d5b500ace6f955c93110728e07",
+          "source_files": [
+            {
+              "path": ".sol",
+              "sha256": "ab5c8ad2bc311d8b6902b23300d35c74ee6f47bb74ecd722fe64ce6adba3cebe"
+            }
+          ]
+        },
+        "disclosure": "## DISCLOSURE SAFE\n\nThe candidate preserves the current privilege surface. It adds no role-management, fund-movement, mint/burn, pause/freeze, upgrade-authority, delegatecall, or new external-call capability.",
+        "disclosure_digest": "ab21bdd8562ed26df1ec9980988673379273015aff1e47e382054b2d96caa7f1",
+        "policy": "## POLICY\n\nProtocol upgrades may add ordinary business logic. Any new role-management, asset-transfer, mint/burn, pause/freeze, upgrade-authority, delegatecall, or external-call capability must be disclosed. Delegatecall and unrestricted asset withdrawal are forbidden.",
+        "policy_digest": "16164b953015eccd7ad28a0e765e77c88456a51c881f75ad37ea440beffdc22e",
+        "status": "GROUNDED"
+      },
+      "display": {
+        "proposal_state": "ACTIVATED",
+        "verdict": "SAFE",
+        "reason_code": "NO_PRIVILEGE_EXPANSION",
+        "permit_consumed": true,
+        "active_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "revision": 1,
+        "stale_base": true
+      },
+      "expected_action": "inspect"
+    },
+    {
+      "selected_proposal_id": 1,
+      "selected_protocol_id": 0,
+      "proposal": {
+        "analysis": {
+          "delegatecall": false,
+          "disclosure_complete": true,
+          "external_call_expansion": false,
+          "fund_movement": false,
+          "mint_or_burn": false,
+          "pause_or_freeze": false,
+          "proposal_id": 1,
+          "reason_code": "NO_PRIVILEGE_EXPANSION",
+          "role_change": false,
+          "storage_write_expansion": false,
+          "unknown_effect": false,
+          "upgrade_authority": false,
+          "verdict": "SAFE"
+        },
+        "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "base_revision": 0,
+        "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "disclosure_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## DISCLOSURE SAFE",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "permit_consumed": false,
+        "proposal_id": 1,
+        "protocol_id": 0,
+        "reason_code": "NO_PRIVILEGE_EXPANSION",
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "PERMIT_READY",
+        "verdict": "SAFE"
+      },
+      "protocol": {
+        "current_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "label": "v2-happy",
+        "policy_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## POLICY",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "protocol_id": 0,
+        "revision": 1,
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "ACTIVE"
+      },
+      "ground": {
+        "candidate": {
+          "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "callable_surface": [
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "admin"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "changeAdmin"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "implementation"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "upgradeTo"
+            },
+            {
+              "inputs": [
+                "address",
+                "bytes"
+              ],
+              "mutability": "payable",
+              "name": "upgradeToAndCall"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "7ca6c3b0e9e4ba1dfb650af162fa5ed1603baca92618c61eb2d055c0e8f232cd",
+          "source_files": [
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/upgradeability/AdminUpgradeabilityProxy.sol",
+              "sha256": "78cde2f2e0e08193fd00ed6af0291f7aedb013f9b37e2108fb0469c605407a28"
+            },
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/upgradeability/Proxy.sol",
+              "sha256": "d21905d81b0f3fdcbd1efa3086f723dfff6d04d91343da01ca5f59948c88bcc4"
+            },
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/upgradeability/UpgradeabilityProxy.sol",
+              "sha256": "4ecb3e5b0caee0a193343cf12d305752c44e7040e43869497707fddc66e96743"
+            },
+            {
+              "path": "/Users/mgrant/Developer/centre-tokens/contracts/v1/FiatTokenProxy.sol",
+              "sha256": "8c681cd559316643ba64bbed3b5ee6ecfdc7f3bab0bb449ec26e891367c14ba5"
+            },
+            {
+              "path": "@openzeppelin/contracts/utils/Address.sol",
+              "sha256": "65e6644738743b23ab1dc72cce8426f0fd6ea5dd96e87a7e16fbb0c4ccbb1633"
+            }
+          ]
+        },
+        "current": {
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "callable_surface": [
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "upgradeTo"
+            },
+            {
+              "inputs": [
+                "address",
+                "bytes"
+              ],
+              "mutability": "payable",
+              "name": "upgradeToAndCall"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "implementation"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "changeAdmin"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "admin"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "c32d9daecaf64a814e64971c76b0f9d6f8e305d5b500ace6f955c93110728e07",
+          "source_files": [
+            {
+              "path": ".sol",
+              "sha256": "ab5c8ad2bc311d8b6902b23300d35c74ee6f47bb74ecd722fe64ce6adba3cebe"
+            }
+          ]
+        },
+        "disclosure": "## DISCLOSURE SAFE\n\nThe candidate preserves the current privilege surface. It adds no role-management, fund-movement, mint/burn, pause/freeze, upgrade-authority, delegatecall, or new external-call capability.",
+        "disclosure_digest": "ab21bdd8562ed26df1ec9980988673379273015aff1e47e382054b2d96caa7f1",
+        "policy": "## POLICY\n\nProtocol upgrades may add ordinary business logic. Any new role-management, asset-transfer, mint/burn, pause/freeze, upgrade-authority, delegatecall, or external-call capability must be disclosed. Delegatecall and unrestricted asset withdrawal are forbidden.",
+        "policy_digest": "16164b953015eccd7ad28a0e765e77c88456a51c881f75ad37ea440beffdc22e",
+        "status": "GROUNDED"
+      },
+      "display": {
+        "proposal_state": "PERMIT_READY",
+        "verdict": "SAFE",
+        "reason_code": "NO_PRIVILEGE_EXPANSION",
+        "permit_consumed": false,
+        "active_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "revision": 1,
+        "stale_base": true
+      },
+      "expected_action": "inspect"
+    },
+    {
+      "selected_proposal_id": 2,
+      "selected_protocol_id": 1,
+      "proposal": {
+        "analysis": {
+          "delegatecall": false,
+          "disclosure_complete": false,
+          "external_call_expansion": true,
+          "fund_movement": true,
+          "mint_or_burn": true,
+          "pause_or_freeze": true,
+          "proposal_id": 2,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "role_change": true,
+          "storage_write_expansion": true,
+          "unknown_effect": false,
+          "upgrade_authority": true,
+          "verdict": "BLOCKED"
+        },
+        "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "base_revision": 0,
+        "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "disclosure_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## DISCLOSURE HIDDEN",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "permit_consumed": false,
+        "proposal_id": 2,
+        "protocol_id": 1,
+        "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "BLOCKED",
+        "verdict": "BLOCKED"
+      },
+      "protocol": {
+        "current_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "label": "v2-hidden",
+        "policy_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## POLICY",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "protocol_id": 1,
+        "revision": 0,
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "ACTIVE"
+      },
+      "ground": {
+        "candidate": {
+          "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "callable_surface": [
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "name"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "deprecate"
+            },
+            {
+              "inputs": [
+                "address",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "approve"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "deprecated"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "addBlackList"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "totalSupply"
+            },
+            {
+              "inputs": [
+                "address",
+                "address",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "transferFrom"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "upgradedAddress"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "balances"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "decimals"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "maximumFee"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "_totalSupply"
+            },
+            {
+              "inputs": [],
+              "mutability": "nonpayable",
+              "name": "unpause"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "getBlackListStatus"
+            },
+            {
+              "inputs": [
+                "address",
+                "address"
+              ],
+              "mutability": "view",
+              "name": "allowed"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "paused"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "balanceOf"
+            },
+            {
+              "inputs": [],
+              "mutability": "nonpayable",
+              "name": "pause"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "getOwner"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "owner"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "symbol"
+            },
+            {
+              "inputs": [
+                "address",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "transfer"
+            },
+            {
+              "inputs": [
+                "uint256",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "setParams"
+            },
+            {
+              "inputs": [
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "issue"
+            },
+            {
+              "inputs": [
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "redeem"
+            },
+            {
+              "inputs": [
+                "address",
+                "address"
+              ],
+              "mutability": "view",
+              "name": "allowance"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "basisPointsRate"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "isBlackListed"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "removeBlackList"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "MAX_UINT"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "transferOwnership"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "destroyBlackFunds"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "5ebee8b11733493226e533ab7b0969f418bdb971a6927f6ce9de88389b078910",
+          "source_files": [
+            {
+              "path": ".sol",
+              "sha256": "36bf0b5747dfe7f79a03c9bc09af63e93e352d3c61199fbf025fd2c962b485f8"
+            }
+          ]
+        },
+        "current": {
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "callable_surface": [
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "upgradeTo"
+            },
+            {
+              "inputs": [
+                "address",
+                "bytes"
+              ],
+              "mutability": "payable",
+              "name": "upgradeToAndCall"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "implementation"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "changeAdmin"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "admin"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "c32d9daecaf64a814e64971c76b0f9d6f8e305d5b500ace6f955c93110728e07",
+          "source_files": [
+            {
+              "path": ".sol",
+              "sha256": "ab5c8ad2bc311d8b6902b23300d35c74ee6f47bb74ecd722fe64ce6adba3cebe"
+            }
+          ]
+        },
+        "disclosure": "## DISCLOSURE HIDDEN\n\nThe candidate is a gas optimization with no security-relevant behavior change.",
+        "disclosure_digest": "6cba28cfd12de54119166b1ee2e546aaddb442052e7670bde35ad4ffc625ed50",
+        "policy": "## POLICY\n\nProtocol upgrades may add ordinary business logic. Any new role-management, asset-transfer, mint/burn, pause/freeze, upgrade-authority, delegatecall, or external-call capability must be disclosed. Delegatecall and unrestricted asset withdrawal are forbidden.",
+        "policy_digest": "16164b953015eccd7ad28a0e765e77c88456a51c881f75ad37ea440beffdc22e",
+        "status": "GROUNDED"
+      },
+      "display": {
+        "proposal_state": "BLOCKED",
+        "verdict": "BLOCKED",
+        "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+        "permit_consumed": false,
+        "active_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "revision": 0,
+        "stale_base": false
+      },
+      "expected_action": "inspect"
+    },
+    {
+      "selected_proposal_id": 3,
+      "selected_protocol_id": 2,
+      "proposal": {
+        "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "base_revision": 0,
+        "candidate_implementation": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "disclosure_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+          "marker": "## DISCLOSURE SAFE",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "permit_consumed": false,
+        "proposal_id": 3,
+        "protocol_id": 2,
+        "reason_code": "",
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "PROPOSED",
+        "verdict": "PENDING"
+      },
+      "protocol": {
+        "current_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "label": "v2-bad-source",
+        "policy_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## POLICY",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "protocol_id": 2,
+        "revision": 0,
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "ACTIVE"
+      },
+      "ground": {
+        "error": "GROUND_NOT_FOUND"
+      },
+      "display": {
+        "proposal_state": "PROPOSED",
+        "verdict": "PENDING",
+        "reason_code": "",
+        "permit_consumed": false,
+        "active_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "revision": 0,
+        "stale_base": false
+      },
+      "expected_action": "ground_sources"
+    },
+    {
+      "selected_proposal_id": 4,
+      "selected_protocol_id": 3,
+      "proposal": {
+        "analysis": {
+          "delegatecall": false,
+          "disclosure_complete": false,
+          "external_call_expansion": true,
+          "fund_movement": true,
+          "mint_or_burn": true,
+          "pause_or_freeze": true,
+          "proposal_id": 4,
+          "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+          "role_change": true,
+          "storage_write_expansion": true,
+          "unknown_effect": false,
+          "upgrade_authority": false,
+          "verdict": "BLOCKED"
+        },
+        "base_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "base_revision": 0,
+        "candidate_implementation": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "disclosure_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## DISCLOSURE AMBIGUOUS",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "permit_consumed": false,
+        "proposal_id": 4,
+        "protocol_id": 3,
+        "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "BLOCKED",
+        "verdict": "BLOCKED"
+      },
+      "protocol": {
+        "current_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "label": "v2-ambiguous",
+        "policy_source": {
+          "commit": "9283e9f5797abb8ac72cade7b17496f89b412bfd",
+          "digest": "96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",
+          "marker": "## POLICY",
+          "owner": "Azariavibecode",
+          "path": "/fixtures/upgrade-evidence.md",
+          "repo": "ImplGuard-Relay"
+        },
+        "protocol_id": 3,
+        "revision": 0,
+        "sponsor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+        "state": "ACTIVE"
+      },
+      "ground": {
+        "candidate": {
+          "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "callable_surface": [
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "name"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "deprecate"
+            },
+            {
+              "inputs": [
+                "address",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "approve"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "deprecated"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "addBlackList"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "totalSupply"
+            },
+            {
+              "inputs": [
+                "address",
+                "address",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "transferFrom"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "upgradedAddress"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "balances"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "decimals"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "maximumFee"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "_totalSupply"
+            },
+            {
+              "inputs": [],
+              "mutability": "nonpayable",
+              "name": "unpause"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "getBlackListStatus"
+            },
+            {
+              "inputs": [
+                "address",
+                "address"
+              ],
+              "mutability": "view",
+              "name": "allowed"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "paused"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "balanceOf"
+            },
+            {
+              "inputs": [],
+              "mutability": "nonpayable",
+              "name": "pause"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "getOwner"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "owner"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "symbol"
+            },
+            {
+              "inputs": [
+                "address",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "transfer"
+            },
+            {
+              "inputs": [
+                "uint256",
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "setParams"
+            },
+            {
+              "inputs": [
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "issue"
+            },
+            {
+              "inputs": [
+                "uint256"
+              ],
+              "mutability": "nonpayable",
+              "name": "redeem"
+            },
+            {
+              "inputs": [
+                "address",
+                "address"
+              ],
+              "mutability": "view",
+              "name": "allowance"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "basisPointsRate"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "view",
+              "name": "isBlackListed"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "removeBlackList"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "MAX_UINT"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "transferOwnership"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "destroyBlackFunds"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "5ebee8b11733493226e533ab7b0969f418bdb971a6927f6ce9de88389b078910",
+          "source_files": [
+            {
+              "path": ".sol",
+              "sha256": "36bf0b5747dfe7f79a03c9bc09af63e93e352d3c61199fbf025fd2c962b485f8"
+            }
+          ]
+        },
+        "current": {
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "callable_surface": [
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "upgradeTo"
+            },
+            {
+              "inputs": [
+                "address",
+                "bytes"
+              ],
+              "mutability": "payable",
+              "name": "upgradeToAndCall"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "implementation"
+            },
+            {
+              "inputs": [
+                "address"
+              ],
+              "mutability": "nonpayable",
+              "name": "changeAdmin"
+            },
+            {
+              "inputs": [],
+              "mutability": "view",
+              "name": "admin"
+            }
+          ],
+          "source": "[verified source omitted from view]",
+          "source_digest": "c32d9daecaf64a814e64971c76b0f9d6f8e305d5b500ace6f955c93110728e07",
+          "source_files": [
+            {
+              "path": ".sol",
+              "sha256": "ab5c8ad2bc311d8b6902b23300d35c74ee6f47bb74ecd722fe64ce6adba3cebe"
+            }
+          ]
+        },
+        "disclosure": "## DISCLOSURE AMBIGUOUS\n\nThe candidate contains general maintenance improvements.",
+        "disclosure_digest": "bc9147a619eec13252c3d0ba26efe73be341d59a35a3f4a41e21988144a2697d",
+        "policy": "## POLICY\n\nProtocol upgrades may add ordinary business logic. Any new role-management, asset-transfer, mint/burn, pause/freeze, upgrade-authority, delegatecall, or external-call capability must be disclosed. Delegatecall and unrestricted asset withdrawal are forbidden.",
+        "policy_digest": "16164b953015eccd7ad28a0e765e77c88456a51c881f75ad37ea440beffdc22e",
+        "status": "GROUNDED"
+      },
+      "display": {
+        "proposal_state": "BLOCKED",
+        "verdict": "BLOCKED",
+        "reason_code": "UNDISCLOSED_PRIVILEGE_EXPANSION",
+        "permit_consumed": false,
+        "active_implementation": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "revision": 0,
+        "stale_base": false
+      },
+      "expected_action": "inspect"
+    }
+  ]
+}

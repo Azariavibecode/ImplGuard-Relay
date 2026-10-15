@@ -1,5 +1,7 @@
 # StudioNet E2E evidence
 
+Current corrected deployment and full fresh suite: [STUDIONET_V2_E2E.md](STUDIONET_V2_E2E.md). Use the v2 report for submission. The remainder of this document preserves historical v1 evidence.
+
 Release caveat: these transactions executed v1. The [source bundle audit](SOURCE_BUNDLE_AUDIT.md) found an evidence-completeness gap and the corrected contract requires a fresh deployment. Registry lifecycle evidence remains valid; it is not live verification of the corrected source collector.
 
 ## Frozen inputs

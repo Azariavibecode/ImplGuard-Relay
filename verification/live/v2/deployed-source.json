@@ -1,0 +1,9 @@
+{
+  "verified_at": "2026-10-15T02:48:32.832Z",
+  "address": "0xF0271b6665c436638274229A6768b1dA4c950a33",
+  "method": "gen_getContractCode",
+  "exact_bytes_match": true,
+  "deployed_sha256": "b6e1927fb66b3d557efac1fb596b54ec4f0c56fad192d101bd312f5e334bf6c3",
+  "local_sha256": "b6e1927fb66b3d557efac1fb596b54ec4f0c56fad192d101bd312f5e334bf6c3",
+  "length": 20186
+}

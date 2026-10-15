@@ -1,5 +1,7 @@
 # Source bundle audit and required redeployment
 
+Update: the corrected source has been redeployed at `0xF0271b6665c436638274229A6768b1dA4c950a33`. Its source was fetched through `gen_getContractCode` and exactly matches the local file. Fresh v2 evidence is stored in `verification/live/v2/`; historical findings and v1 results below remain preserved.
+
 ## Finding
 
 The deployed v1 contract at `0x11aA1f375b2765Bf7757Ca3eB554c6dEF0F127f7` acquired only Blockscout's primary `source_code`. A verified contract can import inherited code from `additional_sources`. The v1 semantic review therefore did not always receive a complete implementation artifact.

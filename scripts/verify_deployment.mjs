@@ -1,0 +1,14 @@
+import {createClient} from "genlayer-js";
+import {studionet} from "genlayer-js/chains";
+import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
+import {createHash} from "node:crypto";
+const address="0xF0271b6665c436638274229A6768b1dA4c950a33";
+const client=createClient({chain:studionet});
+const source=await client.getContractCode(address);
+const local=readFileSync("contracts/ImplGuardRelay.py","utf8");
+const equal=source===local;
+const digest=s=>createHash("sha256").update(s).digest("hex");
+mkdirSync("verification/live/v2",{recursive:true});
+writeFileSync("verification/live/v2/deployed-source.json",JSON.stringify({verified_at:new Date().toISOString(),address,method:"gen_getContractCode",exact_bytes_match:equal,deployed_sha256:digest(source),local_sha256:digest(local),length:source.length},null,2)+"\n");
+if(!equal)throw Error("Deployed source differs from local source");
+console.log("Deployed source byte-for-byte verified",digest(source));
