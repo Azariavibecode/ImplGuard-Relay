@@ -8,7 +8,7 @@ import"./styles.css";
 const DEFAULT_CONTRACT=import.meta.env.VITE_CONTRACT_ADDRESS||"";
 const EXPLORER="https://explorer-studio.genlayer.com";
 const emptyCounts={protocol_count:0,proposal_count:0,activated_count:0,blocked_count:0};
-const sourceTemplate={owner:"YOUR_GITHUB_ACCOUNT",repo:"ImplGuardRelay",commit:"FULL_40_CHARACTER_COMMIT_SHA",path:"/fixtures/upgrade-evidence.md",digest:"SHA256_OF_EXACT_FILE_BYTES",marker:"## POLICY"};
+const sourceTemplate={owner:"Azariavibecode",repo:"ImplGuard-Relay",commit:"9283e9f5797abb8ac72cade7b17496f89b412bfd",path:"/fixtures/upgrade-evidence.md",digest:"96f84a7d4702aa46388664071d846330758b5944d70bf59db3aa57232caf1bdf",marker:"## POLICY"};
 function parse(v){try{return JSON.parse(v)}catch{return null}}
 function short(v=""){return v?`${v.slice(0,8)}…${v.slice(-6)}`:"—"}
 function normalizeTx(v){if(typeof v==="string")return v;if(v&&typeof v.txId==="string")return v.txId;throw Error("INVALID_TRANSACTION_ID")}
