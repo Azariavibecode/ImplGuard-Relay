@@ -12,7 +12,9 @@ def test_frontend_uses_genlayer_and_authoritative_readback():
     source=(ROOT/"frontend/src/main.jsx").read_text(encoding="utf-8")
     assert 'from"genlayer-js"' in source
     assert "waitForTransactionReceipt" in source and 'status:"FINALIZED"' in source
-    assert "await refresh(ids)" in source
+    assert "await refresh({...ids,required:true})" in source
+    assert 'transaction.result_name!=="MAJORITY_AGREE"' in source
+    assert 'leader?.execution_result!=="SUCCESS"' in source
     assert "VITE_CONTRACT_ADDRESS" in source
 
 def test_logo_is_present():
