@@ -2,6 +2,8 @@
 
 Status: pending a replacement contract deployment and publication of the matching frontend. SDK signatures do not satisfy this browser requirement.
 
+Use the exact source descriptors in [v3-descriptors.json](../fixtures/v3-descriptors.json), pinned to fixture commit `b27603129bafe7de97d3789c2d9cc7281eefd1c3`. The replacement contract has no constructor inputs; deploy `contracts/ImplGuardRelay.py` from the main wallet, then verify its returned address using `scripts/verify_v3_release.mjs` before any auxiliary-wallet test.
+
 Use the live Cloudflare origin https://implguard-relay.pages.dev, StudioNet (61999), and an auxiliary wallet. The main wallet deploys only. Independent reviewers can register their own namespace without deployer permission.
 
 1. Confirm the replacement contract address in the deployment panel. Connect a funded auxiliary wallet.

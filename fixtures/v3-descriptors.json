@@ -1,0 +1,29 @@
+{
+  "fixture_commit": "b27603129bafe7de97d3789c2d9cc7281eefd1c3",
+  "policy": {
+    "owner": "Azariavibecode",
+    "repo": "ImplGuard-Relay",
+    "commit": "b27603129bafe7de97d3789c2d9cc7281eefd1c3",
+    "path": "/fixtures/upgrade-evidence.md",
+    "digest": "6bc9f2f29f648006c810c5a8a77e938bc384092fe101713dfa765385d5f09f93",
+    "marker": "## POLICY"
+  },
+  "disclosure": {
+    "owner": "Azariavibecode",
+    "repo": "ImplGuard-Relay",
+    "commit": "b27603129bafe7de97d3789c2d9cc7281eefd1c3",
+    "path": "/fixtures/upgrade-evidence.md",
+    "digest": "6bc9f2f29f648006c810c5a8a77e938bc384092fe101713dfa765385d5f09f93",
+    "marker": "## DISCLOSURE SAFE"
+  },
+  "planned_positive": {
+    "current": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
+    "candidate": "0x6810e776880c02933d47db1b9fc05908e5386b96",
+    "expected": "SAFE only if validators confirm no privilege expansion; no live outcome claimed"
+  },
+  "planned_negative": {
+    "current": "0x6810e776880c02933d47db1b9fc05908e5386b96",
+    "candidate": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
+    "expected": "BLOCKED for forbidden expanded fund movement or mint capabilities"
+  }
+}
