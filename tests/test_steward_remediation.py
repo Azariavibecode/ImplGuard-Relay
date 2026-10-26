@@ -16,7 +16,7 @@ def test_invalid_references_preserve_diagnostic(setup):
     value=json.loads(analysis());value["evidence"]=[]
     vm.mock_llm(r"Compare the exact verified current.*",json.dumps(value))
     assert contract.review_upgrade(0) == "INCONCLUSIVE"
-    assert json.loads(contract.get_proposal(0))["analysis"]["validation_error"] == "INVALID_SOURCE_REFERENCES"
+    assert json.loads(contract.get_proposal(0))["analysis"]["validation_error"] == "INVALID_CATALOG_REFERENCES"
 
 
 @pytest.mark.parametrize("flag", ["delegatecall", "fund_movement", "role_change", "upgrade_authority"])
@@ -96,3 +96,27 @@ def test_exact_aggregate_source_boundary_is_supported(setup):
     result=contract._fetch_verified_contract(CANDIDATE)
     assert result is not None
     assert len(result["source_files"]) == 3
+
+
+def test_catalog_preserves_every_source_byte_and_short_tail(setup):
+    _, contract, _, _ = setup
+    body="contract Example {}"+" "*465
+    digest="a"*64
+    ground={side:{"source":json.dumps([{"path":"main.sol","source":body,"sha256":digest}])} for side in ["current","candidate"]}
+    ground.update(policy="p"*485,policy_digest=digest,disclosure="d"*481,disclosure_digest=digest)
+    catalog=contract._reference_catalog(ground)
+    for side,text in [("current",body),("candidate",body),("policy",ground["policy"]),("disclosure",ground["disclosure"])]:
+        quotes=[v["quote"] for k,v in catalog.items() if k.startswith(side+":")]
+        assert "".join(quotes)==text
+        assert all(12<=len(q)<=600 for q in quotes)
+
+
+def test_catalog_derives_stored_path_hash_quote(setup):
+    vm, contract, _, sponsor=setup
+    prepare(vm,contract,sponsor)
+    vm.mock_llm(r"Compare the exact verified current.*",analysis())
+    assert contract.review_upgrade(0)=="SAFE"
+    refs=json.loads(contract.get_proposal(0))["analysis"]["evidence"]
+    assert all(sorted(r)==["category","path","quote","sha256","side"] for r in refs)
+    assert refs[0]["path"]=="main.sol"
+    assert refs[0]["sha256"]==__import__('hashlib').sha256(refs[0]["quote"].encode()).hexdigest()

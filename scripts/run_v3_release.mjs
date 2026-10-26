@@ -3,7 +3,8 @@ import {studionet} from 'genlayer-js/chains';
 import {privateKeyToAccount} from 'viem/accounts';
 import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
 
-const address='0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4';
+const address=process.env.CONTRACT_ADDRESS||'0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4';
+if(!/^0x[0-9a-fA-F]{40}$/.test(address))throw Error('Invalid contract address');
 const keys=[process.env.TEST_WALLET_A_PRIVATE_KEY,process.env.TEST_WALLET_B_PRIVATE_KEY];
 if(keys.some(x=>!x))throw Error('Missing auxiliary credentials');
 const accounts=keys.map(k=>privateKeyToAccount(k.startsWith('0x')?k:`0x${k}`));
@@ -12,7 +13,7 @@ if(accounts.some((a,i)=>a.address.toLowerCase()!==expected[i]))throw Error('Auxi
 const client=createClient({chain:studionet});
 const descriptors=JSON.parse(readFileSync('fixtures/v3-descriptors.json','utf8'));
 const positive=descriptors.planned_positive;
-const directory='verification/live/v3',file=`${directory}/release-suite.json`;
+const directory=address.toLowerCase()==='0xcca30be2f67210bdefdd2b8d51105bac4bc60ae4'?'verification/live/v3':`verification/live/${address.toLowerCase()}`,file=`${directory}/release-suite.json`;
 mkdirSync(directory,{recursive:true});
 const report=existsSync(file)?JSON.parse(readFileSync(file,'utf8')):{address,chain_id:61999,started_at:new Date().toISOString(),wallets:accounts.map(a=>a.address),transactions:[],cases:{},scope:'SDK-signed auxiliary-wallet lifecycle; browser signatures are separate'};
 const save=()=>writeFileSync(file,JSON.stringify(report,null,2)+'\n');

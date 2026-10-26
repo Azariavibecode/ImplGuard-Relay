@@ -2,7 +2,7 @@
 
 This revision is under development. V3 (`0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4`) has source-parity and 14 finalized SDK transactions, but two semantic reviews returned INCONCLUSIVE. A contradictory prompt instruction has been corrected in the working source, which requires another replacement deployment. See [the detailed V3 ledger](STUDIONET_V3_E2E.md). Browser-wallet E2E remains pending.
 
-Local verification: 46 tests pass through gltest direct execution of the actual contract entrypoints. The React production build succeeds. This verifies local behavior, not replacement-deployment execution.
+Local verification: 48 tests pass through gltest direct execution of the actual contract entrypoints. The React production build succeeds. V4 (`0x9049AbF4D9256BEfE621C71303151c6748A51930`) matched the corrected prompt source, but its first review returned INVALID_SOURCE_REFERENCES. The prepared replacement now has model-selected catalog IDs with contract-derived quote/path/hash. It requires a fresh deployment and is not yet live-verified.
 
 | Request | Implemented change | Verification still required |
 |---|---|---|

@@ -36,7 +36,7 @@ def analysis(verdict="SAFE",reason="NO_PRIVILEGE_EXPANSION",**changes):
     item={"proposal_id":0,"storage_write_expansion":False,"role_change":False,"fund_movement":False,"mint_or_burn":False,"pause_or_freeze":False,"upgrade_authority":False,"delegatecall":False,"external_call_expansion":False,"disclosure_complete":True,"unknown_effect":False,"verdict":verdict,"reason_code":reason}
     item.update(changes)
     def ref(category,side,path,body):
-        return {"category":category,"side":side,"path":path,"sha256":sha(body.encode()),"quote":body[:min(100,len(body))]}
+        return {"category":category,"ref":side+":0"}
     policy=BODY.decode().split("## POLICY",1)[1].split("\n## ",1)[0]
     policy="## POLICY"+policy.rstrip()
     marker="## DISCLOSURE RISK" if item["disclosure_complete"] and verdict=="RISK_DISCLOSED" else "## DISCLOSURE SAFE"
@@ -183,8 +183,5 @@ def test_inherited_privilege_is_included_in_grounded_digest(setup):
     assert len(inventory)==2
     assert inventory[0]=={"path":"Admin.sol","sha256":sha(admin.encode())}
     result=json.loads(analysis("BLOCKED","UNDISCLOSED_PRIVILEGE_EXPANSION",fund_movement=True,disclosure_complete=False))
-    for ref in result["evidence"]:
-        if ref["side"]=="candidate":
-            ref.update(path="Admin.sol",sha256=sha(admin.encode()),quote=admin)
     vm.mock_llm(r"(?s)Compare the exact verified current.*emergencyWithdraw.*",json.dumps(result))
     assert contract.review_upgrade(0)=="BLOCKED"

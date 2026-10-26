@@ -23,6 +23,7 @@ for(const entry of entries){
  report.checks.push({hash:entry.hash,method_observed:entry.method,status,consensus:tx.result_name,execution:leader.execution_result,actor:sender,return_value:returned,ids:entry.ids||null,observed_before:entry.before,observed_after:entry.after,validator_receipts:tx.consensus_data?.validators||tx.consensus_data?.votes||null});
 }
 report.current_counts=JSON.parse(await client.readContract({address,functionName:"get_counts",args:[]}));
-mkdirSync("verification/live/v3",{recursive:true});
-writeFileSync("verification/live/v3/browser-rpc-audit.json",JSON.stringify(report,null,2)+"\n");
+const folder=`verification/live/${address.toLowerCase()}`;
+mkdirSync(folder,{recursive:true});
+writeFileSync(`${folder}/browser-rpc-audit.json`,JSON.stringify(report,null,2)+"\n");
 console.log(`Audited ${report.checks.length} finalized browser-observed transactions`);
