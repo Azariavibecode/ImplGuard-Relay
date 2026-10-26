@@ -1,6 +1,12 @@
 # StudioNet deployment
 
-## Current corrected deployment (v2)
+## Replacement deployment (v3)
+
+Contract: `0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4`
+
+The deployed source exactly matched the remediation contract on 2026-10-26, SHA-256 `53964a14a5a7f34d17f4121396065ceafa603554fa96a53206355ea248faf794`. Initial counts were zero. Machine-readable comparison: [v3/deployed-source.json](live/v3/deployed-source.json). Fresh lifecycle testing is in progress; browser-wallet evidence is pending.
+
+## Superseded deployment (v2)
 
 Contract: `0xF0271b6665c436638274229A6768b1dA4c950a33`
 

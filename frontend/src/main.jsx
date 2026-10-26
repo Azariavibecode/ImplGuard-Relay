@@ -14,7 +14,7 @@ function short(v=""){return v?`${v.slice(0,8)}…${v.slice(-6)}`:"—"}
 function normalizeTx(v){if(typeof v==="string")return v;if(v&&typeof v.txId==="string")return v.txId;throw Error("INVALID_TRANSACTION_ID")}
 
 function App(){
- const[contract,setContract]=useState(()=>{const saved=localStorage.getItem("implguard-contract");return saved?.toLowerCase()==="0x11aa1f375b2765bf7757ca3eb554c6def0f127f7"?DEFAULT_CONTRACT:saved||DEFAULT_CONTRACT});const[account,setAccount]=useState("");const[chainId,setChainId]=useState("");
+ const[contract,setContract]=useState(()=>{const saved=localStorage.getItem("implguard-contract");return ["0x11aa1f375b2765bf7757ca3eb554c6def0f127f7","0xf0271b6665c436638274229a6768b1da4c950a33"].includes(saved?.toLowerCase())?DEFAULT_CONTRACT:saved||DEFAULT_CONTRACT});const[account,setAccount]=useState("");const[chainId,setChainId]=useState("");
  const[counts,setCounts]=useState(emptyCounts);const[protocolId,setProtocolId]=useState("0");const[proposalId,setProposalId]=useState("0");const[protocol,setProtocol]=useState(null);const[proposal,setProposal]=useState(null);const[ground,setGround]=useState(null);
  const[mode,setMode]=useState("inspect");const[label,setLabel]=useState("treasury-adapter");const[current,setCurrent]=useState("");const[candidate,setCandidate]=useState("");const[policySource,setPolicySource]=useState(JSON.stringify(sourceTemplate,null,2));const[disclosureSource,setDisclosureSource]=useState(JSON.stringify({...sourceTemplate,marker:"## DISCLOSURE SAFE"},null,2));
  const[busy,setBusy]=useState("");const[notice,setNotice]=useState("Configure a deployment or connect a wallet to start.");const[tx,setTx]=useState("");
