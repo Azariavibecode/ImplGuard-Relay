@@ -1,8 +1,8 @@
 # Steward remediation working record — 2026-10-26
 
-This revision is under development. V2 remains the last deployed version; local changes below are not evidence of a replacement deployment or browser-wallet E2E.
+This revision is under development. V3 (`0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4`) has source-parity and 14 finalized SDK transactions, but two semantic reviews returned INCONCLUSIVE. A contradictory prompt instruction has been corrected in the working source, which requires another replacement deployment. See [the detailed V3 ledger](STUDIONET_V3_E2E.md). Browser-wallet E2E remains pending.
 
-Local verification: 44 tests pass through gltest direct execution of the actual contract entrypoints. The React production build succeeds. This verifies local behavior, not replacement-deployment execution.
+Local verification: 46 tests pass through gltest direct execution of the actual contract entrypoints. The React production build succeeds. This verifies local behavior, not replacement-deployment execution.
 
 | Request | Implemented change | Verification still required |
 |---|---|---|

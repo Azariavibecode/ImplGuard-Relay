@@ -3,6 +3,22 @@ import pytest
 from test_implguard_relay import setup, prepare, analysis, mock_contract, CURRENT, CANDIDATE
 
 
+def test_reference_array_has_unambiguous_model_schema(setup):
+    vm, contract, _, sponsor = setup
+    prepare(vm, contract, sponsor)
+    vm.mock_llm(r"(?s)Compare the exact verified current.*evidence MUST be an array of reference objects, never a boolean.*", analysis())
+    assert contract.review_upgrade(0) == "SAFE"
+
+
+def test_invalid_references_preserve_diagnostic(setup):
+    vm, contract, _, sponsor = setup
+    prepare(vm, contract, sponsor)
+    value=json.loads(analysis());value["evidence"]=[]
+    vm.mock_llm(r"Compare the exact verified current.*",json.dumps(value))
+    assert contract.review_upgrade(0) == "INCONCLUSIVE"
+    assert json.loads(contract.get_proposal(0))["analysis"]["validation_error"] == "INVALID_SOURCE_REFERENCES"
+
+
 @pytest.mark.parametrize("flag", ["delegatecall", "fund_movement", "role_change", "upgrade_authority"])
 def test_policy_denial_overrides_model_permission(setup, flag):
     vm, contract, _, sponsor = setup

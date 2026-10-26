@@ -1,0 +1,46 @@
+{
+  "verified_at": "2026-10-26T07:56:55.517Z",
+  "production_url": "https://implguard-relay.pages.dev",
+  "deployment_url": "https://aa03d714.implguard-relay.pages.dev",
+  "source_commit": "f8689d8ecd7f3d8bc7dd474c5c5a99ddd21128d8",
+  "address": "0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4",
+  "all_assets_match": true,
+  "assets": [
+    {
+      "path": "assets/ccip-0u_9a0He.js",
+      "url": "https://implguard-relay.pages.dev/assets/ccip-0u_9a0He.js",
+      "status": 200,
+      "sha256": "e0d37534da43440f9bb5a988d386fb1900d77833c126d4483e42419de17094fa",
+      "matches_local_build": true
+    },
+    {
+      "path": "assets/index-7Rte44ol.css",
+      "url": "https://implguard-relay.pages.dev/assets/index-7Rte44ol.css",
+      "status": 200,
+      "sha256": "21416b2f9f5fda5f77f87767cc2b96564abb692552d3619471ce7e391e1345d9",
+      "matches_local_build": true
+    },
+    {
+      "path": "assets/index-DLDK26MS.js",
+      "url": "https://implguard-relay.pages.dev/assets/index-DLDK26MS.js",
+      "status": 200,
+      "sha256": "9b86793c707af46dfa3ca0844c981aff87e0f2f94e90410b2d8d465f46d60593",
+      "matches_local_build": true
+    },
+    {
+      "path": "implguard-logo.png",
+      "url": "https://implguard-relay.pages.dev/implguard-logo.png",
+      "status": 200,
+      "sha256": "6291b709f4cd1629e04491fc2bae544abdf6827d3369bee39297d0992f32f0de",
+      "matches_local_build": true
+    },
+    {
+      "path": "index.html",
+      "url": "https://implguard-relay.pages.dev/",
+      "status": 200,
+      "sha256": "77642d6d8b6aa02f9e52725addf030942f581367ee4d54a779191bfb67554c85",
+      "matches_local_build": true
+    }
+  ],
+  "scope": "HTTP asset delivery and contract configuration. V3 semantic lifecycle is incomplete; browser signatures remain pending."
+}
