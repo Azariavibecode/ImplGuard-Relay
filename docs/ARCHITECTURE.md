@@ -6,11 +6,11 @@
 
 ## Semantic boundary
 
-The model returns only bounded booleans plus a verdict and reason code. `prompt_comparative` compares semantic results. Deterministic code rejects inconsistent positive outcomes and converts malformed output to `INCONCLUSIVE`.
+The model returns bounded booleans, a verdict, a reason code and authenticated source references. `prompt_comparative` requires independent assessment of source and policy relevance. Deterministic code checks exact quoted bytes, path and digest, rejects inconsistent positive outcomes and converts malformed output to `INCONCLUSIVE`. After consensus, authenticated machine-policy DENY rules override any positive semantic permission. See [supported source scope](SOURCE_SUPPORT.md).
 
 ## Downstream consequence
 
-`consume_activation` is the enforcement consumer. It rechecks sender, permit state, exact base implementation, and revision immediately before changing the active implementation. Consumption and activation are atomic and cannot replay.
+`consume_activation` is the enforcement consumer. It rechecks sender, permit state, exact base implementation, and revision immediately before changing the approved implementation inside the GenLayer registry. Consumption and registry activation are atomic and cannot replay. The record explicitly carries GENLAYER_REGISTRY_ONLY. External Ethereum ownership, upgrade authorization and execution require a separate adapter and confirmed chain receipts.
 
 ## Roles
 

@@ -25,15 +25,28 @@ def mock_github(vm):
     raw=f"https://raw.githubusercontent.com/{OWNER}/{REPO}/{COMMIT}{PATH}"
     vm.mock_web(raw.replace(".",r"\.")+"$",{"status":200,"body":BODY})
 
-def mock_contract(vm,address,source,verified=True,additional_sources=None,file_path="main.sol"):
-    vm.mock_web(("https://eth.blockscout.com/api/v2/addresses/"+address).replace(".",r"\.")+"$",{"status":200,"body":json.dumps({"hash":address,"is_contract":True}).encode()})
+def mock_contract(vm,address,source,verified=True,additional_sources=None,file_path="main.sol",metadata=None):
+    identity={"hash":address,"is_contract":True,**({"proxy_type":None,"implementations":[]} if metadata is None else metadata)}
+    vm.mock_web(("https://eth.blockscout.com/api/v2/addresses/"+address).replace(".",r"\.")+"$",{"status":200,"body":json.dumps(identity).encode()})
     abi=[{"type":"function","name":"deposit","inputs":[{"name":"amount","type":"uint256"}],"stateMutability":"nonpayable"}]
     if address==CANDIDATE: abi.append({"type":"function","name":"withdraw","inputs":[{"name":"amount","type":"uint256"}],"stateMutability":"nonpayable"})
     vm.mock_web(("https://eth.blockscout.com/api/v2/smart-contracts/"+address).replace(".",r"\.")+"$",{"status":200,"body":json.dumps({"is_verified":verified,"source_code":source,"file_path":file_path,"additional_sources":additional_sources or [],"abi":abi}).encode()})
 
 def analysis(verdict="SAFE",reason="NO_PRIVILEGE_EXPANSION",**changes):
     item={"proposal_id":0,"storage_write_expansion":False,"role_change":False,"fund_movement":False,"mint_or_burn":False,"pause_or_freeze":False,"upgrade_authority":False,"delegatecall":False,"external_call_expansion":False,"disclosure_complete":True,"unknown_effect":False,"verdict":verdict,"reason_code":reason}
-    item.update(changes);return json.dumps(item)
+    item.update(changes)
+    def ref(category,side,path,body):
+        return {"category":category,"side":side,"path":path,"sha256":sha(body.encode()),"quote":body[:min(100,len(body))]}
+    policy=BODY.decode().split("## POLICY",1)[1].split("\n## ",1)[0]
+    policy="## POLICY"+policy.rstrip()
+    marker="## DISCLOSURE RISK" if item["disclosure_complete"] and verdict=="RISK_DISCLOSED" else "## DISCLOSURE SAFE"
+    disclosure=marker+BODY.decode().split(marker,1)[1].split("\n## ",1)[0].rstrip()
+    item["evidence"]=[ref("comparison","current","main.sol",CURRENT_SOURCE),ref("comparison","candidate","main.sol",CANDIDATE_SOURCE)]
+    for flag in ["storage_write_expansion","role_change","fund_movement","mint_or_burn","pause_or_freeze","upgrade_authority","delegatecall","external_call_expansion"]:
+        if item[flag]:
+            item["evidence"] += [ref(flag,"candidate","main.sol",CANDIDATE_SOURCE),ref(flag,"policy","policy",policy)]
+            if item["disclosure_complete"]: item["evidence"].append(ref(flag,"disclosure","disclosure",disclosure))
+    return json.dumps(item)
 
 @pytest.fixture
 def setup(direct_vm,direct_deploy,direct_alice,direct_bob):
@@ -169,5 +182,9 @@ def test_inherited_privilege_is_included_in_grounded_digest(setup):
     inventory=ground["candidate"]["source_files"]
     assert len(inventory)==2
     assert inventory[0]=={"path":"Admin.sol","sha256":sha(admin.encode())}
-    vm.mock_llm(r"(?s)Compare the exact verified current.*emergencyWithdraw.*",analysis("BLOCKED","UNDISCLOSED_PRIVILEGE_EXPANSION",fund_movement=True,disclosure_complete=False))
+    result=json.loads(analysis("BLOCKED","UNDISCLOSED_PRIVILEGE_EXPANSION",fund_movement=True,disclosure_complete=False))
+    for ref in result["evidence"]:
+        if ref["side"]=="candidate":
+            ref.update(path="Admin.sol",sha256=sha(admin.encode()),quote=admin)
+    vm.mock_llm(r"(?s)Compare the exact verified current.*emergencyWithdraw.*",json.dumps(result))
     assert contract.review_upgrade(0)=="BLOCKED"

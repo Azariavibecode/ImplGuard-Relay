@@ -1,5 +1,9 @@
 # ImplGuard Relay
 
+**Steward remediation in progress (2026-10-26):** the working source adds deterministic authenticated policy rules, direct-implementation scope checks and source-specific finding references. [Requirement mapping and remaining release checks](verification/STEWARD_REMEDIATION.md). The V2 address and evidence below describe the previous deployment; the changed source requires a replacement deployment and fresh browser-wallet verification before resubmission.
+
+`ACTIVATED` means a registry-approved implementation change inside GenLayer. It does not attest proxy ownership or execute an Ethereum upgrade. The new revision supports bounded direct Solidity source review only; proxy wrappers, delegation, fallback, assembly and unsupported/incomplete source layouts are rejected. It does not establish historical runtime bytecode identity.
+
 Live dApp: [https://implguard-relay.pages.dev](https://implguard-relay.pages.dev). [Cloudflare deployment verification](verification/cloudflare-deployment.md).
 
 StudioNet deployment: [0xF0271b6665c436638274229A6768b1dA4c950a33](https://explorer-studio.genlayer.com/address/0xF0271b6665c436638274229A6768b1dA4c950a33).
