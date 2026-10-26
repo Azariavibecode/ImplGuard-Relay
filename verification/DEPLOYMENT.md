@@ -1,5 +1,9 @@
 # StudioNet deployment
 
+## V4 observed deployment — incomplete semantic lifecycle
+
+`0x9049AbF4D9256BEfE621C71303151c6748A51930` matched the corrected-prompt source on 2026-10-26. [V4 evidence](STUDIONET_V4_E2E.md) records 14 finalized calls and INVALID_SOURCE_REFERENCES. The prepared catalog-ID source differs from this deployment and must be deployed again. No successful activation or completed remediation release is claimed.
+
 ## Replacement deployment (v3)
 
 Contract: `0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4`

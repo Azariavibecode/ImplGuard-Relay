@@ -353,7 +353,7 @@ class Contract(gl.Contract):
                     + "\nPOLICY_SHA256:" + ground["policy_digest"] + "\nDISCLOSURE_SHA256:" + ground["disclosure_digest"]
                     + "\nCURRENT_SURFACE:" + json.dumps(ground["current"]["callable_surface"], sort_keys=True)
                     + "\nCANDIDATE_SURFACE:" + json.dumps(ground["candidate"]["callable_surface"], sort_keys=True)
-                    + "\nREFERENCE_CATALOG:" + json.dumps(catalog, sort_keys=True)
+                    + "\nREFERENCE_CATALOG:" + json.dumps(catalog)
                 )
                 raw = gl.nondet.exec_prompt(prompt, response_format="json")
                 result = json.loads(raw) if isinstance(raw, str) else raw

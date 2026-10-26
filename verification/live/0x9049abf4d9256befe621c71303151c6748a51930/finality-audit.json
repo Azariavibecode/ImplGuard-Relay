@@ -1,0 +1,168 @@
+{
+  "audited_at": "2026-10-26T08:26:51.104Z",
+  "address": "0x9049AbF4D9256BEfE621C71303151c6748A51930",
+  "passed": true,
+  "checks": [
+    {
+      "hash": "0x6ef0ecd17af943a243e9cd6a1aea27f320878759d235d3b06c3b8c112911024d",
+      "label": "happy_register",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 0,
+      "passed": true
+    },
+    {
+      "hash": "0xa6111e713e5348c3a87650fa3baaad51c6675218bc85d67188ae66fa8f245044",
+      "label": "happy_propose",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 0,
+      "passed": true
+    },
+    {
+      "hash": "0xd82e8f0e4cd590c9ebfe496498ca1572c7da4b954216385245193ba7e2c6d461",
+      "label": "happy_ground",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x7c87b10a3d43f3b3551414401f8b26b9f662bab5",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": "GROUNDED",
+      "passed": true
+    },
+    {
+      "hash": "0x747cae8d8502e8cefb9c6ed6ddd842ce7f22afaeff89f2b894f770e742567612",
+      "label": "happy_review",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x7c87b10a3d43f3b3551414401f8b26b9f662bab5",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": "INCONCLUSIVE",
+      "passed": true
+    },
+    {
+      "hash": "0xac7d5d868e75e3f2928438920d1922b7e0f7a0d6f03f565e8a241de8c0e02027",
+      "label": "forbidden_register",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 1,
+      "passed": true
+    },
+    {
+      "hash": "0xff185aa5b90a6a7ace79441c71b98809f9139159ac1ab9fa221c20e0e5669acb",
+      "label": "forbidden_propose",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 1,
+      "passed": true
+    },
+    {
+      "hash": "0xa3b38aa45de8cde7fa797f7892b97bb44102f9412aa2c376a682fa54738d9e08",
+      "label": "forbidden_ground",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x7c87b10a3d43f3b3551414401f8b26b9f662bab5",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": "GROUNDED",
+      "passed": true
+    },
+    {
+      "hash": "0xa24d80831860ad1aa3750eb1a323cb64462e507ec3ee941d8a05b932deb09d4a",
+      "label": "forbidden_review",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x7c87b10a3d43f3b3551414401f8b26b9f662bab5",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": "INCONCLUSIVE",
+      "passed": true
+    },
+    {
+      "hash": "0xf2a616eb5f2998e8f2d276ce6b3e944256e925f1c33d57b1018b20454089e119",
+      "label": "bad_digest_register",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 2,
+      "passed": true
+    },
+    {
+      "hash": "0xfc7d1b1ca79c83e15eaa2ef7a09d6cb0e40e8b6bf054e10d2894cd452cb70ca5",
+      "label": "bad_digest_propose",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 2,
+      "passed": true
+    },
+    {
+      "hash": "0xe18e0e9f0a178e77c80f36c3b120821bc28a1a21299b85af93c5eebe62f003c4",
+      "label": "bad_digest_ground",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x7c87b10a3d43f3b3551414401f8b26b9f662bab5",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": "SOURCE_UNVERIFIED",
+      "passed": true
+    },
+    {
+      "hash": "0xca8f5ff399a102e06cdd0d5fff70e53013a92d0d42c2bc453e3768d530bf016e",
+      "label": "proxy_register",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 3,
+      "passed": true
+    },
+    {
+      "hash": "0x6482bde60cf1101f63e406425c1422b0ca513f94f67983dcbe613b342e750446",
+      "label": "proxy_propose",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x67a1a08fc4cf7d05c859d0d3d8398a3a30b1677e",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": 3,
+      "passed": true
+    },
+    {
+      "hash": "0x9797b49b573a4e1e84edc29367dd143ee936c3ccf437fdd8399c0fe9dc9a5141",
+      "label": "proxy_ground",
+      "status": 7,
+      "consensus": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "actor": "0x7c87b10a3d43f3b3551414401f8b26b9f662bab5",
+      "target": "0x9049abf4d9256befe621c71303151c6748a51930",
+      "return_value": "SOURCE_UNVERIFIED",
+      "passed": true
+    }
+  ],
+  "current_counts": {
+    "activated_count": 0,
+    "blocked_count": 0,
+    "proposal_count": 4,
+    "protocol_count": 4
+  },
+  "scope": "Independent re-read of finality, execution, identity and return. Does not turn SDK signatures into browser signatures."
+}

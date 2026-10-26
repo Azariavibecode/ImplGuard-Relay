@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-10-26T08:07:27.156Z",
+  "address": "0x9049AbF4D9256BEfE621C71303151c6748A51930",
+  "chain_id": 61999,
+  "exact_source_match": true,
+  "sha256": "b9e85bf73796e6c3ead8f901ce6078caaf1199e9c486df0ddade730d121997d2",
+  "counts": {
+    "activated_count": 0,
+    "blocked_count": 0,
+    "proposal_count": 0,
+    "protocol_count": 0
+  },
+  "scope": "Source parity and current counters only. Browser signatures require separate evidence."
+}

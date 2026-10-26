@@ -2,6 +2,8 @@
 
 **Steward remediation in progress (2026-10-26):** the working source adds deterministic authenticated policy rules, direct-implementation scope checks and source-specific finding references. [Requirement mapping and remaining release checks](verification/STEWARD_REMEDIATION.md). The published frontend now targets V3 `0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4`, with five matching production assets. [V3 recorded 14 finalized transactions](verification/STUDIONET_V3_E2E.md) but its semantic reviews returned INCONCLUSIVE. A model-schema instruction correction and diagnostic fields now require a replacement deployment; successful activation and browser-wallet verification are still pending. V2 records below are historical.
 
+[V4 verification](verification/STUDIONET_V4_E2E.md) completed another 14 finalized transactions on `0x9049AbF4D9256BEfE621C71303151c6748A51930`. The semantic citation gate reported INVALID_SOURCE_REFERENCES and issued no permit. The prepared replacement derives citations from authenticated catalog IDs and passes 48 local tests; it still requires deployment and fresh live verification.
+
 `ACTIVATED` means a registry-approved implementation change inside GenLayer. It does not attest proxy ownership or execute an Ethereum upgrade. The new revision supports bounded direct Solidity source review only; proxy wrappers, delegation, fallback, assembly and unsupported/incomplete source layouts are rejected. It does not establish historical runtime bytecode identity.
 
 Live dApp: [https://implguard-relay.pages.dev](https://implguard-relay.pages.dev). [Cloudflare deployment verification](verification/cloudflare-deployment.md).
