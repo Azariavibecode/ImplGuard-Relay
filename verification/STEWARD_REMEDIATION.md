@@ -2,7 +2,7 @@
 
 This revision is under development. V3 (`0xcca30bE2F67210BDefDD2B8D51105BAc4bc60Ae4`) has source-parity and 14 finalized SDK transactions, but two semantic reviews returned INCONCLUSIVE. A contradictory prompt instruction has been corrected in the working source, which requires another replacement deployment. See [the detailed V3 ledger](STUDIONET_V3_E2E.md). Browser-wallet E2E remains pending.
 
-Local verification: 48 tests pass through gltest direct execution of the actual contract entrypoints. The React production build succeeds. V4 (`0x9049AbF4D9256BEfE621C71303151c6748A51930`) matched the corrected prompt source, but its first review returned INVALID_SOURCE_REFERENCES. The prepared replacement now has model-selected catalog IDs with contract-derived quote/path/hash. It requires a fresh deployment and is not yet live-verified.
+Local verification: 51 tests pass through gltest direct execution of the actual contract entrypoints. The React production build succeeds. V4 (`0x9049AbF4D9256BEfE621C71303151c6748A51930`) matched the corrected prompt source but returned INVALID_SOURCE_REFERENCES. V5 (`0x0af8c3Af2899b5D4e41Ba567C6f4E62B7668B341`) matched the catalog-ID source and recorded 11 finalized transactions, including the same citation-validation rejection. An independent audit re-read all 11 hashes successfully. Its forbidden-case proposal was interrupted by an RPC error before submission. The prepared replacement now preserves specific citation diagnostics and rejected references and allows exactly one evidence-only repair with immutable semantic fields. This source still needs deployment and fresh live verification. See [V5 evidence](STUDIONET_V5_E2E.md).
 
 | Request | Implemented change | Verification still required |
 |---|---|---|

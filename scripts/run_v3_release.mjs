@@ -43,7 +43,7 @@ async function unchanged(e,actor,method,args,label,expected){
  e[label]={expected,returned,before,after,passed:returned===expected&&JSON.stringify(before)===JSON.stringify(after)};save();
  if(!e[label].passed)throw Error(`${label}: rejected-call state invariant failed`);
 }
-async function execute(name,fn){try{await fn();report.cases[name].completed=true;save();}catch(error){report.cases[name]={...report.cases[name],error:error.message};save();console.log('CASE_INCOMPLETE',name,error.message);}}
+async function execute(name,fn){if(report.cases[name]?.completed)return;try{await fn();report.cases[name].completed=true;delete report.cases[name].error;save();}catch(error){report.cases[name]={...report.cases[name],error:error.message};save();console.log('CASE_INCOMPLETE',name,error.message);}}
 await execute('happy',async()=>{
  const e=await create('happy',positive.current,positive.candidate);
  const grounded=await tx(1,'ground_sources',[BigInt(e.proposal_id)],'happy_ground');if(grounded!=='GROUNDED')throw Error(`Grounding: ${grounded}`);
@@ -70,5 +70,18 @@ for(const name of ['bad_digest','proxy'])await execute(name,async()=>{
  const e=await create(name,positive.current,target,'## DISCLOSURE SAFE',name==='bad_digest');
  await unchanged(e,1,'ground_sources',[BigInt(e.proposal_id)],`${name}_ground`,'SOURCE_UNVERIFIED');
  e.ground=await read('get_ground',[BigInt(e.proposal_id)]);save();if(e.ground.error!=='GROUND_NOT_FOUND')throw Error('Rejected source persisted ground');
+});
+if(report.cases.happy?.completed)await execute('stale',async()=>{
+ const e=await create('stale',positive.current,positive.candidate);
+ if(e.sibling_id===undefined){const id=await tx(0,'propose_upgrade',[BigInt(e.protocol_id),positive.candidate,source()],'stale_sibling_propose');if(!Number.isSafeInteger(id))throw Error('Sibling proposal rejected');e.sibling_id=id;save();}
+ for(const [label,id] of [['primary',e.proposal_id],['sibling',e.sibling_id]]){
+  const grounded=await tx(1,'ground_sources',[BigInt(id)],`stale_${label}_ground`);if(grounded!=='GROUNDED')throw Error(`Sibling grounding: ${grounded}`);
+  await tx(1,'review_upgrade',[BigInt(id)],`stale_${label}_review`);
+  const p=await read('get_proposal',[BigInt(id)]);if(!['PERMIT_READY','ACTIVATED'].includes(p.state))throw Error(`Sibling review ${p.state}`);
+ }
+ const returned=await tx(0,'consume_activation',[BigInt(e.proposal_id)],'stale_primary_activate');if(returned!=='ACTIVATED')throw Error('Primary activation failed');
+ const snap=async()=>({...await snapshot(e),sibling:await read('get_proposal',[BigInt(e.sibling_id)])});
+ const before=await snap();const rejection=await tx(0,'consume_activation',[BigInt(e.sibling_id)],'stale_sibling_consume');const after=await snap();
+ e.stale_base={before,after,returned:rejection,expected:'STALE_BASE',passed:rejection==='STALE_BASE'&&JSON.stringify(before)===JSON.stringify(after)};save();if(!e.stale_base.passed)throw Error('Stale-base invariant failed');
 });
 report.final_counts=await read('get_counts');report.finished_at=new Date().toISOString();report.all_cases_passed=Object.values(report.cases).every(x=>x.completed&&!x.error);save();console.log('SUITE_FINISHED',JSON.stringify({all_cases_passed:report.all_cases_passed,counts:report.final_counts}));

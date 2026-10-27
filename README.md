@@ -4,6 +4,8 @@
 
 [V4 verification](verification/STUDIONET_V4_E2E.md) completed another 14 finalized transactions on `0x9049AbF4D9256BEfE621C71303151c6748A51930`. The semantic citation gate reported INVALID_SOURCE_REFERENCES and issued no permit. The prepared replacement derives citations from authenticated catalog IDs and passes 48 local tests; it still requires deployment and fresh live verification.
 
+[V5 verification](verification/STUDIONET_V5_E2E.md) records 11 independently audited finalized transactions on `0x0af8c3Af2899b5D4e41Ba567C6f4E62B7668B341`, again with a citation validation rejection and no activation. The prepared source now retains precise citation diagnostics and permits one citation-only repair with immutable semantic fields; 51 local tests pass. A fresh deployment and successful live/browser evidence remain required.
+
 `ACTIVATED` means a registry-approved implementation change inside GenLayer. It does not attest proxy ownership or execute an Ethereum upgrade. The new revision supports bounded direct Solidity source review only; proxy wrappers, delegation, fallback, assembly and unsupported/incomplete source layouts are rejected. It does not establish historical runtime bytecode identity.
 
 Live dApp: [https://implguard-relay.pages.dev](https://implguard-relay.pages.dev). [Cloudflare deployment verification](verification/cloudflare-deployment.md).

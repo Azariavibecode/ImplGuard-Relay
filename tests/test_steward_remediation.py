@@ -120,3 +120,35 @@ def test_catalog_derives_stored_path_hash_quote(setup):
     assert all(sorted(r)==["category","path","quote","sha256","side"] for r in refs)
     assert refs[0]["path"]=="main.sol"
     assert refs[0]["sha256"]==__import__('hashlib').sha256(refs[0]["quote"].encode()).hexdigest()
+
+
+def test_single_bounded_citation_repair_can_fix_coverage(setup):
+    vm, contract, _, sponsor=setup
+    prepare(vm,contract,sponsor)
+    first=json.loads(analysis());first["evidence"]=[{"category":"comparison","ref":"candidate:0"}]*2
+    vm.mock_llm(r"^Compare the exact verified current.*",json.dumps(first))
+    vm.mock_llm(r"Repair citation structure and coverage.*",analysis())
+    assert contract.review_upgrade(0)=="SAFE"
+    assert json.loads(contract.get_proposal(0))["state"]=="PERMIT_READY"
+
+
+def test_failed_repair_preserves_specific_diagnostic_and_rejected_quotes(setup):
+    vm, contract, _, sponsor=setup
+    prepare(vm,contract,sponsor)
+    first=json.loads(analysis());first["evidence"]=[{"category":"comparison","ref":"candidate:0"}]*2
+    vm.mock_llm(r"^Compare the exact verified current.*",json.dumps(first))
+    vm.mock_llm(r"Repair citation structure and coverage.*",json.dumps(first))
+    assert contract.review_upgrade(0)=="INCONCLUSIVE"
+    result=json.loads(contract.get_proposal(0))["analysis"]
+    assert result["validation_error"]=="INVALID_SOURCE_REFERENCES:MISSING_COMPARISON_SIDE"
+    assert len(result["rejected_evidence"])==2
+
+
+def test_repair_cannot_remove_forbidden_semantic_flags(setup):
+    vm, contract, _, sponsor=setup
+    prepare(vm,contract,sponsor,"## DISCLOSURE RISK")
+    first=json.loads(analysis("RISK_DISCLOSED","DISCLOSED_POLICY_ALLOWED",delegatecall=True));first["evidence"]=[]
+    vm.mock_llm(r"^Compare the exact verified current.*",json.dumps(first))
+    vm.mock_llm(r"Repair citation structure and coverage.*",analysis())
+    assert contract.review_upgrade(0)=="INCONCLUSIVE"
+    assert json.loads(contract.get_proposal(0))["state"]!="PERMIT_READY"

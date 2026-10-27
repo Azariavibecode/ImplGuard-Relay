@@ -195,39 +195,42 @@ class Contract(gl.Contract):
             return None
 
     def _check_references(self, result: dict, ground: dict) -> bool:
+        return self._reference_error(result, ground) == ""
+
+    def _reference_error(self, result: dict, ground: dict) -> str:
         refs = result.get("evidence")
         flags = ["storage_write_expansion", "role_change", "fund_movement", "mint_or_burn", "pause_or_freeze", "upgrade_authority", "delegatecall", "external_call_expansion"]
         if not isinstance(refs, list) or not (1 <= len(refs) <= 24):
-            return False
+            return "REFERENCE_COUNT"
         coverage = set()
-        for ref in refs:
+        for index, ref in enumerate(refs):
             if not isinstance(ref, dict) or sorted(ref) != ["category", "path", "quote", "sha256", "side"]:
-                return False
+                return "REFERENCE_SCHEMA:" + str(index)
             quote = ref["quote"]
             if not isinstance(quote, str) or not (12 <= len(quote) <= 600):
-                return False
+                return "QUOTE_LENGTH:" + str(index)
             side = ref["side"]
             if side in ["current", "candidate"]:
                 files = json.loads(ground[side]["source"])
                 found = [item for item in files if item["path"] == ref["path"] and item["sha256"] == ref["sha256"] and quote in item["source"]]
                 if len(found) != 1:
-                    return False
+                    return "SOURCE_MEMBERSHIP:" + str(index)
             elif side in ["policy", "disclosure"]:
                 if ref["path"] != side or ref["sha256"] != ground[side + "_digest"] or quote not in ground[side]:
-                    return False
+                    return "SECTION_MEMBERSHIP:" + str(index)
             else:
-                return False
+                return "REFERENCE_SIDE:" + str(index)
             if ref["category"] not in flags + ["comparison"]:
-                return False
+                return "REFERENCE_CATEGORY:" + str(index)
             coverage.add((ref["category"], side))
         if not any(side == "current" for _, side in coverage) or not any(side == "candidate" for _, side in coverage):
-            return False
+            return "MISSING_COMPARISON_SIDE"
         for flag in flags:
             if result.get(flag) and ((flag, "candidate") not in coverage or (flag, "policy") not in coverage):
-                return False
+                return "MISSING_CANDIDATE_OR_POLICY:" + flag
             if result.get(flag) and result.get("disclosure_complete") and (flag, "disclosure") not in coverage:
-                return False
-        return True
+                return "MISSING_DISCLOSURE:" + flag
+        return ""
 
     def _reference_catalog(self, ground: dict) -> dict:
         catalog = {}
@@ -340,6 +343,31 @@ class Contract(gl.Contract):
         def fallback(validation_error: str = "MODEL_UNCERTAIN") -> str:
             return json.dumps({"proposal_id": expected_id, "storage_write_expansion": False, "role_change": False, "fund_movement": False, "mint_or_burn": False, "pause_or_freeze": False, "upgrade_authority": False, "delegatecall": False, "external_call_expansion": False, "disclosure_complete": False, "unknown_effect": True, "verdict": "INCONCLUSIVE", "reason_code": "AMBIGUOUS_DELTA", "validation_error": validation_error}, sort_keys=True, separators=(",", ":"))
 
+        def normalize(raw) -> str:
+            result = json.loads(raw) if isinstance(raw, str) else raw
+            fields = ["proposal_id", "storage_write_expansion", "role_change", "fund_movement", "mint_or_burn", "pause_or_freeze", "upgrade_authority", "delegatecall", "external_call_expansion", "disclosure_complete", "unknown_effect", "verdict", "reason_code", "evidence"]
+            if not isinstance(result, dict) or sorted(result) != sorted(fields) or result.get("proposal_id") != expected_id or any(type(result.get(field)) is not bool for field in fields[1:11]):
+                return fallback("INVALID_MODEL_SCHEMA")
+            expansion = any(result[field] for field in fields[1:9])
+            verdict, reason = result["verdict"], result["reason_code"]
+            valid = (
+                (verdict == "SAFE" and not expansion and result["disclosure_complete"] and not result["unknown_effect"] and reason == "NO_PRIVILEGE_EXPANSION") or
+                (verdict == "RISK_DISCLOSED" and expansion and result["disclosure_complete"] and not result["unknown_effect"] and reason == "DISCLOSED_POLICY_ALLOWED") or
+                (verdict == "BLOCKED" and reason in ["UNDISCLOSED_PRIVILEGE_EXPANSION", "POLICY_FORBIDDEN"]) or
+                (verdict == "INCONCLUSIVE" and result["unknown_effect"] and reason == "AMBIGUOUS_DELTA")
+            )
+            if not valid:
+                return fallback("INCONSISTENT_MODEL_OUTCOME")
+            if not self._materialize_references(result, catalog):
+                return fallback("INVALID_CATALOG_REFERENCES")
+            error = self._reference_error(result, ground)
+            if error:
+                rejected = json.loads(fallback("INVALID_SOURCE_REFERENCES:" + error))
+                rejected["rejected_evidence"] = result["evidence"]
+                rejected["reported_flags"] = {field: result[field] for field in fields[1:11]}
+                return json.dumps(rejected, sort_keys=True, separators=(",", ":"))
+            return json.dumps(result, sort_keys=True, separators=(",", ":"))
+
         def evaluate() -> str:
             try:
                 prompt = (
@@ -356,26 +384,20 @@ class Contract(gl.Contract):
                     + "\nREFERENCE_CATALOG:" + json.dumps(catalog)
                 )
                 raw = gl.nondet.exec_prompt(prompt, response_format="json")
-                result = json.loads(raw) if isinstance(raw, str) else raw
-                fields = ["proposal_id", "storage_write_expansion", "role_change", "fund_movement", "mint_or_burn", "pause_or_freeze", "upgrade_authority", "delegatecall", "external_call_expansion", "disclosure_complete", "unknown_effect", "verdict", "reason_code", "evidence"]
-                bools = fields[1:11]
-                if not isinstance(result, dict) or sorted(result.keys()) != sorted(fields) or result.get("proposal_id") != expected_id or any(type(result.get(field)) is not bool for field in bools):
-                    return fallback("INVALID_MODEL_SCHEMA")
-                expansion = any(result[field] for field in ["storage_write_expansion", "role_change", "fund_movement", "mint_or_burn", "pause_or_freeze", "upgrade_authority", "delegatecall", "external_call_expansion"])
-                verdict, reason = result.get("verdict"), result.get("reason_code")
-                valid = (
-                    (verdict == "SAFE" and not expansion and result["disclosure_complete"] and not result["unknown_effect"] and reason == "NO_PRIVILEGE_EXPANSION") or
-                    (verdict == "RISK_DISCLOSED" and expansion and result["disclosure_complete"] and not result["unknown_effect"] and reason == "DISCLOSED_POLICY_ALLOWED") or
-                    (verdict == "BLOCKED" and reason in ["UNDISCLOSED_PRIVILEGE_EXPANSION", "POLICY_FORBIDDEN"]) or
-                    (verdict == "INCONCLUSIVE" and result["unknown_effect"] and reason == "AMBIGUOUS_DELTA")
-                )
-                if not valid:
-                    return fallback("INCONSISTENT_MODEL_OUTCOME")
-                if not self._materialize_references(result, catalog):
-                    return fallback("INVALID_CATALOG_REFERENCES")
-                if not self._check_references(result, ground):
-                    return fallback("INVALID_SOURCE_REFERENCES")
-                return json.dumps(result, sort_keys=True, separators=(",", ":"))
+                normalized = normalize(raw)
+                diagnostic = json.loads(normalized).get("validation_error", "")
+                if diagnostic.startswith(("INVALID_CATALOG_REFERENCES", "INVALID_SOURCE_REFERENCES")):
+                    repair = "Repair citation structure and coverage using the same authenticated evidence. Preserve substantive facts; do not change flags or claim safety just to pass checks. Return the exact assessment schema. This is the only repair attempt. Validation error: " + diagnostic + "\nPREVIOUS_RESPONSE:" + json.dumps(raw) + "\nORIGINAL_TASK:" + prompt
+                    try:
+                        repaired = gl.nondet.exec_prompt(repair, response_format="json")
+                        before = json.loads(raw) if isinstance(raw, str) else raw
+                        after = json.loads(repaired) if isinstance(repaired, str) else repaired
+                        if not isinstance(after, dict) or {k: v for k, v in before.items() if k != "evidence"} != {k: v for k, v in after.items() if k != "evidence"}:
+                            return normalized
+                        return normalize(repaired)
+                    except Exception:
+                        return normalized
+                return normalized
             except Exception as error:
                 return fallback("REVIEW_EXCEPTION_" + type(error).__name__)
 
